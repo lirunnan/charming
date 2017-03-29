@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/style_20170322.css">
+    <script>
+        function setRemFontSize(baseSize, baseWidth) {
+            var baseSize = baseSize || 13,
+                baseWidth = baseWidth || 320,
+                clientWidth = document.documentElement.clientWidth;
+            document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+        }
+        setRemFontSize();
+        window.addEventListener("resize", function() {
+            setRemFontSize();
+        });
+    </script>
+</head>
+
+<body ng-controller="myCtrl">
+    <div class="header">
+        <img src="http://media.kitty.live/upload/5d77033b76ed4c8ca2a5f453e2e4740d.jpg" alt="">
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="title"><img src="http://media.kitty.live/upload/d7d24a72f47541ada0685cfef2d49db4.png" alt=""></div>
+            <div class="content-inner">
+                <div class="top">
+                    <div class="top_user one" ng-click="go(rank2.user_id)" ng-show="rank2.user_id">
+                        <div class="bg_img"><img src="http://media.kitty.live/upload/b1dcdde7aa1949d6bbfb44da81ce3c09.png" alt=""></div>
+                        <div class="mid">
+                            <div class="user_title">
+                                <img src="http://media.kitty.live/upload/3b6bb7481f724f25bfa224142fcc202c.png" alt="">
+                            </div>
+                            <div class="user_img">
+                                <img ng-src="{{rank2.avatar}}" alt="">
+                            </div>
+                            <div class="user_rank">2nd</div>
+                        </div>
+                        <div class="text">
+                            <p ng-bind="rank2.nickname"></p>
+                            <p>104241</p>
+                        </div>
+                    </div>
+                    <div class="top_user two" ng-click="go(rank1.user_id)" ng-show="rank1.user_id">
+                        <div class="bg_img"><img src="http://media.kitty.live/upload/b1dcdde7aa1949d6bbfb44da81ce3c09.png" alt=""></div>
+                        <div class="mid">
+                            <div class="user_title">
+                                <img src="http://media.kitty.live/upload/b48f39e4244a4406b5122e73216306b0.png" alt="">
+                            </div>
+                            <div class="user_img">
+                                <img ng-src="{{rank1.avatar}}" alt="">
+                            </div>
+                            <div class="user_rank">1st</div>
+                        </div>
+                        <div class="text">
+                            <p ng-bind="rank1.nickname"></p>
+                            <p>164125</p>
+                        </div>
+                    </div>
+                    <div class="top_user three" ng-click="go(rank3.user_id)" ng-show="rank3.user_id">
+                        <div class="bg_img"><img src="http://media.kitty.live/upload/b1dcdde7aa1949d6bbfb44da81ce3c09.png" alt=""></div>
+                        <div class="mid">
+                            <div class="user_title">
+                                <img src="http://media.kitty.live/upload/135933abc28f41818ab107b28c4459ce.png" alt="">
+                            </div>
+                            <div class="user_img">
+                                <img ng-src="{{rank3.avatar}}" alt="">
+                            </div>
+                            <div class="user_rank">3rd</div>
+                        </div>
+                        <div class="text">
+                            <p ng-bind="rank3.nickname"></p>
+                            <p>87553</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul ng-repeat="item in list" ng-click="go(item.user_id)">
+                        <li ng-bind="$index+4"></li>
+                        <li>
+                            <div>
+                                <img ng-src="{{item.avatar}}" alt="">
+                            </div>
+                        </li>
+                        <li ng-bind="item.nickname"></li>
+                        <li ng-bind="item.ticket"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script>
+    angular.module("myApp", []).controller("myCtrl", function($scope, $http) {
+        //
+        $http.jsonp("https://api.kitty.live/v1/activity/20170306/user_info?callback=JSON_CALLBACK&kitty_id_string=100588190,108364230,82701627,84964289,98934054,115558714,107558070,67730802,101037240,89831001").success(function(res) {
+            var data = res.user_info_list;
+            var arr_ticket = [69708, 68910, 68741, 59747, 51289, 47364, 35851];
+            $scope.list = data.slice(3);
+            $scope.rank1 = data[0];
+            $scope.rank2 = data[1];
+            $scope.rank3 = data[2];
+            if ($scope.rank1) {
+                $(".container").show();
+            }
+            for (var i = 0; i < $scope.list.length; i++) {
+                $scope.list[i].ticket = arr_ticket[i];
+            }
+            console.log($scope.list);
+        })
+        var clicked = false;
+        $scope.go = function(user_id) {
+            if (clicked) return;
+            clicked = true;
+            setTimeout(function() {
+                clicked = false
+            }, 2000);
+            location.href = 'kitty://com.kitty/dynamic_user?user_id=' + user_id;
+        }
+    })
+</script>
+
+</html>
