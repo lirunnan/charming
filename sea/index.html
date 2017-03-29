@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/style_20170330.css">
+    <title></title>
+    <script>
+        function setRemFontSize(baseSize, baseWidth) {
+            var baseSize = baseSize || 13,
+                baseWidth = baseWidth || 320,
+                clientWidth = document.documentElement.clientWidth;
+            document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+        }
+        setRemFontSize();
+        window.addEventListener("resize", function() {
+            setRemFontSize();
+        });
+    </script>
+</head>
+
+<body ng-controller="myCtrl">
+    <!-- pop -->
+    <div class="pop" ng-click="popH()">
+        <div class="pop_inner">
+            <div class="pop_txt">
+                <p>1. <img src="http://media.kitty.live/upload/fd1c8189b3d14d0f949d126f1fd001a4.png" alt=""> = 1 meter</p>
+                <p>2. <img src="http://media.kitty.live/upload/c5558d3a64104fd4be9933fb5d58888c.png" alt=""> = -2 meter</p>
+                <p>3. Perhitungan Point ranking = (N x Submarine) + (M x Shark).</p>
+                <p>4. Contoh: (Submarin=10, Shark=10) Point: (10 x 1 meter) + 10 x (-2) = -10 </p>
+                <p>5. TOP 100 yang bertahan akan muncul di Survival Ranking.</p>
+                <p>6. Setiap orang hanya mempunyai kesempatan selama 96 jam untuk bisa selamat. Jadi, pastikan kamu berhasil ya!</p>
+            </div>
+        </div>
+        <!--  pop_pao-->
+        <div class="big_pao">
+            <img src="http://media.kitty.live/upload/e2e13316db004eb2bf0b677c3a8673b7.png" alt="">
+        </div>
+    </div>
+    <!--  -->
+    <div id="wrap">
+        <div class="rule" ng-click="popS()">
+            <img src="http://media.kitty.live/upload/e84bc43b3cc8418ba01086c8961ea401.png" alt="">
+        </div>
+        <div class="top_land">
+            <img src="http://media.kitty.live/upload/aaa747c90201461883c2fffe9fddd36d.png" alt="">
+        </div>
+        <!--  -->
+        <div class="container">
+            <div class="content">
+                <div class="title">
+                    <img src="http://media.kitty.live/upload/1c5328f07fc4487988ae0f751dc93691.png" alt="">
+                </div>
+                <p class="soon">
+                    Coming soon...
+                </p>
+                <div class="group">
+                    <!-- rank -->
+                    <div class="content-inner-rank inner">
+                        <ul class="list_title">
+                            <li>Rank</li>
+                            <li>Message</li>
+                            <li>total</li>
+                        </ul>
+                        <ul ng-repeat="item in list" ng-click="go(item.user_id)">
+                            <li ng-bind="$index+1"></li>
+                            <li>
+                                <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                            </li>
+                            <li ng-bind="item.nickname"></li>
+                            <li ng-bind="item.points"></li>
+                        </ul>
+                    </div>
+                    <!-- vj -->
+                    <div class="content-inner-vj inner">
+                        <ul class="vj_title">
+                            <li>Rank</li>
+                            <li>Message</li>
+                            <li>Shark</li>
+                            <li>Ting</li>
+                            <li>Total</li>
+                        </ul>
+                        <ul ng-repeat="item in list" ng-click="go(item.user_id)">
+                            <li ng-bind="$index+1"></li>
+                            <li>
+                                <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                            </li>
+                            <li ng-bind="item.nickname"></li>
+                            <li ng-bind="item.shark_number"></li>
+                            <li ng-bind="item.sub_number"></li>
+                            <li ng-bind="item.gift_number"></li>
+                        </ul>
+                    </div>
+                    <!-- user -->
+                    <div class="content-inner-user inner">
+                        <ul class="vj_title">
+                            <li>Rank</li>
+                            <li>Message</li>
+                            <li>Shark</li>
+                            <li>Ting</li>
+                            <li>Total</li>
+                        </ul>
+                        <ul ng-repeat="item in list_user" ng-click="go(item.user_id)">
+                            <li ng-bind="$index+1"></li>
+                            <li>
+                                <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                            </li>
+                            <li ng-bind="item.nickname"></li>
+                            <li ng-bind="item.shark_number"></li>
+                            <li ng-bind="item.sub_number"></li>
+                            <li ng-bind="item.gift_number"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <ul>
+                <li ng-click="tog(0)">
+                    <div class="tog">
+                        <img src="http://media.kitty.live/upload/2452af25c9e64df0ad7aeb7a4e9c2900.png" alt="">
+                    </div>
+                    <p>Survival Ranking</p>
+                    <div class="cover_pop">
+                        <img src="http://media.kitty.live/upload/2fed7d8a0959439d8c573e37ca17aa85.png" alt="">
+                    </div>
+                </li>
+                <li ng-click="tog(1)">
+                    <div class="tog">
+                        <img src="http://media.kitty.live/upload/28b61dc49c524ebf9f6ffaf2e18637bf.png" alt="">
+                    </div>
+                    <p>VJ</p>
+                    <div class="cover_pop">
+                        <img src="http://media.kitty.live/upload/2fed7d8a0959439d8c573e37ca17aa85.png" alt="">
+                    </div>
+                </li>
+                <li ng-click="tog(2)">
+                    <div class="tog">
+                        <img src="http://media.kitty.live/upload/cd62cbf794cd46c7acaad508a6e81780.png" alt="">
+                    </div>
+                    <p>User</p>
+                    <div class="cover_pop">
+                        <img src="http://media.kitty.live/upload/2fed7d8a0959439d8c573e37ca17aa85.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- grass -->
+        <div class="grass_group">
+            <div class="grass grass_ani">
+                <img src="http://media.kitty.live/upload/a8d31ee983844c1cae68f477f1e99424.png" alt="">
+            </div>
+            <div class="leaf leaf_ani">
+                <img src="http://media.kitty.live/upload/7b17bf2912eb460980771f767a7d5cbf.png" alt="">
+            </div>
+            <div class="num_max num_max_ani">5000</div>
+            <div class="num_min">0</div>
+        </div>
+    </div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/transform.js"></script>
+<script src="js/banner_20170330.js"></script>
+
+</html>
