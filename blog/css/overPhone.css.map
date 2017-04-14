@@ -1,0 +1,1 @@
+{"version":3,"sources":["overPhone.scss"],"names":[],"mappings":"AAAA,O,CACI,S,CADJ,c,CAIM,U,CAJN,qB,CAMY,e","file":"overPhone.css","sourcesContent":["section {\n    width: 90%;\n\n    .group {\n      padding: 5%;\n        .title {\n            font-size: 1.5em;\n        }\n    }\n}\n"],"sourceRoot":"/source/"}
