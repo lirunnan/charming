@@ -12,3 +12,31 @@ function jump(index) {
 function popClose() {
     $(".example_pop").hide();
 }
+$(window).scroll(function() {
+    $(".back").show();
+})
+//禁止右键和f12
+// function click(e) {
+//     if (document.all) {
+//         if (event.button == 2 || event.button == 3) {
+//             alert("你要干嘛");
+//             oncontextmenu = 'return false';
+//         }
+//     }
+//     if (document.layers) {
+//         if (e.which == 3) {
+//             oncontextmenu = 'return false';
+//         }
+//     }
+// }
+// if (document.layers) {
+//     document.captureEvents(Event.MOUSEDOWN);
+// }
+// document.onmousedown = click;
+// document.oncontextmenu = new Function("return false;")
+// document.onkeydown = document.onkeyup = document.onkeypress = function() {
+//     if (window.event.keyCode == 123) {
+//         window.event.returnValue = false;
+//         return (false);
+//     }
+// }

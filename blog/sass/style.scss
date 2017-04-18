@@ -5,8 +5,8 @@ $color: #4C543C;
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: "Helvetica Neue",arial,sans-serif;
-    -webkit-backface-visibility:hidden;
+    font-family: "Kaiti",arial,sans-serif;
+    -webkit-backface-visibility: hidden;
     -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
 }
 
@@ -18,7 +18,7 @@ body {
 header {
     width: 100%;
     min-height: 10em;
-    box-shadow: 0 0 0.5em $color inset;
+    // box-shadow: 0 0 0.5em $color inset;
     position: relative;
     animation: show 1s ease;
     -webkit-animation: show 1s ease;
@@ -47,10 +47,11 @@ section {
         margin-top: 2em;
         padding: 2%;
         border-bottom: 0.1em solid $color;
+        color: $color;
 
         .title {
-            color: $color;
             font-size: 2em;
+            color: $color;
 
             &::after {
                 display: inline-block;
@@ -62,7 +63,7 @@ section {
         }
 
         .example {
-            min-height: 10em;
+            min-height: 3em;
 
             ul {
                 li {
@@ -92,6 +93,11 @@ section {
                         }
                     }
                 }
+            }
+
+            .gulp {
+                margin-top: 1rem;
+                font-size: 1.2rem;
             }
         }
     }
@@ -142,6 +148,98 @@ section {
 .exampleLiAni {
     animation: big 1s linear;
     -webkit-animation: big 1s linear;
+}
+
+.gulp-content {
+    color: $color;
+
+    h1 {
+        text-align: center;
+        margin-top: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 0.05rem solid $color;
+    }
+
+    h2 {
+        color: #000;
+    }
+
+    .container {
+        width: 80%;
+        margin: 2rem auto;
+        min-height: 20rem;
+
+        h3 {
+            margin-top: 2rem;
+        }
+
+        .gulp_group {
+            margin-top: 2rem;
+
+            &:nth-child(3) {
+                .content {
+                    height: 25rem;
+                    overflow-x: hidden;
+                    overflow-y: scroll;
+                }
+
+                p {
+                    margin-top: 0.5rem;
+                    margin-left: 1rem;
+
+                    &:nth-child(1) {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+
+        .content {
+            padding: 1rem;
+            background-color: rgba(0,0,0,.5);
+            min-height: 5rem;
+            margin-top: 1rem;
+            color: #fff;
+
+            .content-inner {
+                margin-top: 1rem;
+                font-size: 1rem;
+
+                .txt_mid {
+                    p {
+                        margin-left: 3rem;
+                    }
+                }
+
+                span {
+                    color: #aaa;
+                    margin-left: 1%;
+                }
+
+                &:nth-child(1) {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+
+.back {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(0,0,0,.5);
+    line-height: 4rem;
+    text-align: center;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    color: #fff;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    display: none;
+    animation: show 1s ease;
+    -webkit-animation:show 1s ease;
 }
 @keyframes show {
     from {

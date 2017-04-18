@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新一杂记</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" media="(max-width: 800px)" href="../css/overPhone.css" />
+</head>
+
+<body>
+    <div class="gulp-content">
+        <a href="../index.html" class="back">back</a>
+        <h1>gulp汇总</h1>
+        <div class="container">
+            <!-- gulp install -->
+            <div class="gulp_group">
+                <h2>安装与配置</h2>
+                <div class="content">
+                    <div class="content-inner">安装node,此处忽略一些字,此处以mac及linux做介绍</div>
+                    <div class="content-inner">
+                        <p>npm install --g gulp <span> //全局安装</span></p>
+                        <p>npm install --save-dev gulp <span> //在项目中安装,node_modules</span></p>
+                        <p>npm install --save-dev gulp-uglify <span> //安装gulp插件</span></p>
+                    </div>
+                </div>
+                <h3>创建gulpfile.js（ps：文件名必须是gulpfile）</h3>
+                <div class="content">
+                    <div class="content-inner">var gulp = require('gulp');</div>
+                    <div class="content-inner">gulp.task('default', function() {
+                        <p> <span>// place code for your default task here</span></p>
+                        <p> });</p>
+                    </div>
+                </div>
+                <h3>命令行执行gulp文件，命令行中输入gulp执行</h3>
+            </div>
+            <!-- api -->
+            <div class="gulp_group">
+                <h2>gulp api</h2>
+                <h3>glup的5大函数</h3>
+                <div class="content">
+                    <div class="content-inner">gulp.task(name, fn)，注册一个 gulp 任务</div>
+                    <div class="content-inner">gulp.run(...tasks)，并行运行多个 gulp 任务</div>
+                    <div class="content-inner">gulp.watch(glob, fn)，实时监控内容，当 glob 内容变化时，执行 fn</div>
+                    <div class="content-inner">gulp.src(glob)，glob 是目标文件的路径，返回一个可读的 stream</div>
+                    <div class="content-inner">gulp.dest(gloc)，glob 是输出路径，返回一个可写的 stream</div>
+                </div>
+            </div>
+            <div class="gulp_group">
+                <h2>常用gulp文件</h2>
+                <h3>一个demo</h3>
+                <div class="content">
+                    <div class="content-inner">
+                        <p>var gulp = require('gulp'),</p>
+                        <p>jshint = require('gulp-jshint'),</p>
+                        <p>sass = require('gulp-sass'),</p>
+                        <p>concat = require('gulp-concat'),</p>
+                        <p>uglify = require('gulp-uglify'),</p>
+                        <p>rename = require('gulp-rename'),</p>
+                        <p>imagemin = require('gulp-imagemin'),</p>
+                        <p>minifycss = require('gulp-minify-css'),</p>
+                        <p>livereload = require('gulp-livereload'),</p>
+                        <p>connect = require('gulp-connect');</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//server</p>
+                        <p>gulp.task('connect', function () {</p>
+                        <div class="txt_mid">
+                            <p> connect.server({;</p>
+                            <p> root: './dist',</p>
+                            <p>livereload: true</p>
+                            <p>});</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//整理其他任务</p>
+                        <p>gulp.task('release', ['html', 'lint','scripts','sass','css','imagesmin']);</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//默认任务</p>
+                        <p>gulp.task('default', ['release', 'connect', 'watch']);</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//检查脚本</p>
+                        <p>gulp.task('lint', function(){</p>
+                        <div class="txt_mid">
+                            <p>gulp.src('./src/js/*.js')</p>
+                            <p>.pipe(jshint())</p>
+                            <p>.pipe(jshint.reporter('default'));</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//编译sass</p>
+                        <p>gulp.task('sass', function(){</p>
+                        <div class="txt_mid">
+                            <p>gulp.src('./src/sass/*.scss')</p>
+                            <p>.pipe(sass())</p>
+                            <p>.pipe(gulp.dest('./dist/css'));</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//合并，压缩js</p>
+                        <p>gulp.task('scripts', function(){</p>
+                        <div class="txt_mid">
+                            <p> gulp.src('./src/js/*.js')</p>
+                            <p>.pipe(gulp.dest('./dist/js'))</p>
+                            <p>.pipe(uglify());</p>
+                            <p>.pipe(gulp.dest('./dist/js'))</p>
+                            <p>.pipe(connect.reload());</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//压缩图片</p>
+                        <p>gulp.task('imagesmin', function(){</p>
+                        <div class="txt_mid">
+                            <p>gulp.src('./src/images/*.{png,jpg,gif,ico}')</p>
+                            <p>.pipe(imagemin({</p>
+                            <p>optimizationLevel: 5, <span>//类型：Number  默认：3  取值范围：0-7（优化等级）</span></p>
+                            <p>progressive: true, <span>//类型：Boolean 默认：false 无损压缩jpg图片</span></p>
+                            <p>interlaced: true, <span>//类型：Boolean 默认：false 隔行扫描gif进行渲染</span></p>
+                            <p>multipass: true <span>//类型：Boolean 默认：false 多次优化svg直到完全优化</span></p>
+                            <p>}))</p>
+                            <p>.pipe(gulp.dest('./dist/images'))</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//监听html</p>
+                        <p>gulp.task('html', function () {</p>
+                        <div class="txt_mid">
+                            <p>gulp.src('./src/*.html')</p>
+                            <p>.pipe(gulp.dest('./dist'))</p>
+                            <p>.pipe(connect.reload());</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//压缩，合并css</p>
+                        <p>gulp.task('css', function () {</p>
+                        <div class="txt_mid">
+                            <p>gulp.src('src/css/*.css')</p>
+                            <p>pipe(rename({ suffix: '.min' }))</p>
+                            <p>.pipe(minifycss())</p>
+                            <p>.pipe(gulp.dest('./dist/css'))</p>
+                            <p> .pipe(connect.reload());</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                    <div class="content-inner">
+                        <p>//监听</p>
+                        <p>gulp.task('watch', function(){</p>
+                        <div class="txt_mid">
+                            <p> gulp.watch('./src/js/*.js', ['lint', 'scripts']);</p>
+                            <p> gulp.watch('./src/css/*.css', ['css']);</p>
+                            <p>gulp.watch('./src/*.html', ['html'])</p>
+                        </div>
+                        <p>});</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- <script src="js/angular.min.js"></script> -->
+<script src="../js/style.js"></script>
+
+</html>
