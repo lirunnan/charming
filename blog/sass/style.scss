@@ -11,14 +11,14 @@ $color: #4C543C;
 }
 
 body {
-    background-image: url("http://pic.qiantucdn.com/58pic/14/48/32/92X58PICBsZ_1024.jpg");
     background-position: center;
+    background-color: #FCF1D5;
 }
 
 header {
     width: 100%;
     min-height: 10em;
-    // box-shadow: 0 0 0.5em $color inset;
+    border-bottom: 0.05em solid $color;
     position: relative;
     animation: show 1s ease;
     -webkit-animation: show 1s ease;
@@ -95,7 +95,7 @@ section {
                 }
             }
 
-            .gulp {
+            .statement {
                 margin-top: 1rem;
                 font-size: 1.2rem;
             }
@@ -150,7 +150,8 @@ section {
     -webkit-animation: big 1s linear;
 }
 
-.gulp-content {
+.gulp-content,
+.mobile-content {
     color: $color;
 
     h1 {
@@ -162,6 +163,12 @@ section {
 
     h2 {
         color: #000;
+        margin-top: 1em;
+    }
+
+    h4,
+    p {
+        margin-top: 0.5em;
     }
 
     .container {
@@ -173,11 +180,18 @@ section {
             margin-top: 2rem;
         }
 
-        .gulp_group {
+        .gulp_group,
+        .mobile_group {
             margin-top: 2rem;
+            ul{
+              margin-top: 1em;
+              li{
+                margin-top: 0.5em;
+              }
+            }
 
             &:nth-child(3) {
-                .content {
+                .gulp-file {
                     height: 25rem;
                     overflow-x: hidden;
                     overflow-y: scroll;
@@ -196,8 +210,8 @@ section {
 
         .content {
             padding: 1rem;
-            background-color: rgba(0,0,0,.5);
-            min-height: 5rem;
+            background-color: rgb(0,0,0);
+            min-height: 2rem;
             margin-top: 1rem;
             color: #fff;
 
@@ -237,9 +251,9 @@ section {
     color: #fff;
     font-size: 1.1rem;
     border-radius: 0.5rem;
-    display: none;
+    // display: none;
     animation: show 1s ease;
-    -webkit-animation:show 1s ease;
+    -webkit-animation: show 1s ease;
 }
 @keyframes show {
     from {

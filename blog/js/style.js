@@ -12,7 +12,7 @@ function jump(index) {
 function popClose() {
     $(".example_pop").hide();
 }
-$(window).scroll(function() {
+$(document).scroll(function() {
     $(".back").show();
 })
 //禁止右键和f12
