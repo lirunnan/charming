@@ -30,23 +30,6 @@ window.onload = function() {
     }, 1000)
 }
 
-function aa() {
-    d = setInterval("yan()", 200);
-}
-aa();
-var a = 0;
-
-function yan() {
-    var arr = new Array("手", "扎", "记");
-    var sun = document.getElementsByClassName("title")[0];
-    sun.innerHTML += arr[a];
-    a++;
-    if (a > 2) {
-        clearInterval(d);
-    }
-
-}
-
 //禁止右键和f12
 // function click(e) {
 //     if (document.all) {
