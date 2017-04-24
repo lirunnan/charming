@@ -13,43 +13,28 @@
 
 <body>
     <header>
-        <div>手札记</div>
+        <div class="title"></div>
+        <div id="time"></div>
     </header>
     <section>
         <div class="group">
-            <a class="title" href="javascript:;">常用css3简单动效</a>
+            <a class="title" href="tpl/gulp.html">gulp</a>
             <div class="example">
-                <ul>
-                    <li onclick="jump(0)">
-                        <div class="demo"></div>
-                    </li>
-                    <li onclick="jump(1)">
-                    </li>
-                    <li onclick="jump(2)"></li>
-                </ul>
-            </div>
-            <div class="example_pop">
-                <a href="javascript:;" class="pop_close" onclick="popClose()">X</a>
-                <div class="pop_inner">
-                    <div class="code">
-                        .demo { width: 4em; height: 4em; margin: 2em auto; border-radius: 50%; border: 0.2em solid #9462D1; border-top-color: transparent; border-bottom-color: transparent; animation: demo1 1s linear infinite; -webkit-animation: demo1 1s linear infinite; } @keyframes
-                        demo1 { from { transform: rotate(0); } to { transform: rotate(360deg); } } @-webkit-keyframes demo1 { from { transform: rotate(0); } to { transform: rotate(360deg); } }
-                    </div>
-                    <div class="code">11</div>
-                    <div class="code">22</div>
-                </div>
+                <p class="statement">
+                    基于node的一种工作流程，爱不释手的工具，压缩代码，监听自动刷新，解析sass等, 将es6转化成es5进行编译
+                </p>
             </div>
         </div>
         <div class="group">
-            <a class="title" href="tpl/gulp.html">gulp用法整理</a>
-            <div class="example">
-                <p class="statement">基于node的一种工作流程，爱不释手的工具，压缩代码，监听自动刷新，解析sass等</p>
-            </div>
-        </div>
-        <div class="group">
-            <a class="title" href="tpl/mobile.html">移动端web开发技巧</a>
+            <a class="title" href="tpl/mobile.html">web移动端</a>
             <div class="example">
                 <p class="statement">时下移动端开发愈演愈烈，大有渐渐取代传统pc趋势，各种app雨后春笋，层出不穷，所以是时候整理一波了</p>
+            </div>
+        </div>
+        <div class="group">
+            <a class="title" href="tpl/stickey.html">Sticky Footer(css 绝对底部)</a>
+            <div class="example">
+                <p class="statement">经常因为底部footer不能出现在下方问题困扰的队友们，进来逛逛吧</p>
             </div>
         </div>
     </section>
