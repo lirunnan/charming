@@ -1,4 +1,5 @@
 $color: #4C543C;
+$notice: #78809E;
 
 * {
     margin: 0;
@@ -13,6 +14,10 @@ $color: #4C543C;
 body {
     background-position: center;
     background-color: #FCF1D5;
+}
+div{
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
 }
 
 header {
@@ -44,6 +49,7 @@ header {
         letter-spacing: 0.1em;
         top: 75%;
         color: #333;
+        white-space: nowrap;
     }
 }
 
@@ -85,9 +91,16 @@ section {
 }
 
 .gulp-content,
+.mobile-content,
 .sticky-content,
-.mobile-content {
+.this-content,
+.reg-content {
     color: $color;
+
+    .notice {
+        color: $notice;
+        font-weight: bold;
+    }
 
     h1 {
         text-align: center;
@@ -116,8 +129,10 @@ section {
         }
 
         .gulp_group,
+        .mobile_group,
         .sticky_group,
-        .mobile_group {
+        .this_group,
+        .reg_group {
             margin-top: 2rem;
 
             ul {
@@ -143,6 +158,10 @@ section {
                         margin-left: 0;
                     }
                 }
+            }
+            .sum{
+              font-weight: bold;
+              font-size: 1em;
             }
         }
 
