@@ -41,7 +41,7 @@ var div = document.getElementsByTagName("div"),
             clearInterval(j);
         }
         console.log(num);
-    }, 300)
+    }, 200)
 //禁止右键和f12
 // function click(e) {
 //     if (document.all) {
