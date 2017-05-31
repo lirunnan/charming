@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Kaiti", arial, sans-serif;
+  -webkit-backface-visibility: hidden
+}
+
+.welcome {
+  background-color: rgba(0, 0, 0, .7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100
+}
+
+.welcome p {
+  width: 50%;
+  margin: 20% auto;
+  text-align: center;
+  font-size: 3em;
+  color: #fff;
+  animation: big 1s ease;
+  -webkit-animation: big 1s ease
+}
+
+.welcome p:nth-child(2) {
+  display: none
+}
+
+.login {
+  background-color: rgba(0, 0, 0, .7);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100
+}
+
+.login .login-inner {
+  width: 60%;
+  text-align: center;
+  margin: 0 auto
+}
+
+.login .login-inner a {
+  display: block;
+  margin: 3em auto 0;
+  width: 13em;
+  height: 2em;
+  color: #fff;
+  text-align: center;
+  border-radius: .5em;
+  line-height: 2em;
+  font-weight: 700;
+  background-color: #000;
+  transition: all .5s linear;
+  -webkit-transition: all .5s linear;
+  animation: loginInfo 1.5s ease;
+  -webkit-animation: loginInfo 1.5s ease
+}
+
+.login .login-inner input {
+  display: block;
+  margin: 25% auto 0;
+  width: 15em;
+  padding-left: 1em;
+  height: 3em;
+  border-radius: .5em;
+  animation: loginInfo 2s ease;
+  -webkit-animation: loginInfo 2s ease
+}
+
+.login .login-inner a:hover {
+  box-shadow: 0 0 1em #fff
+}
+
+.chat .container {
+  width: 40em;
+  min-height: 10em;
+  border: 1px solid #000;
+  margin: 2% auto
+}
+
+.chat .container .mesPanel {
+  width: 100%;
+  height: 30em;
+  overflow-y: scroll
+}
+
+.chat .container .bottomTools {
+  border-top: 1px solid #000;
+  width: 100%;
+  height: 15em
+}
+
+.chat .container .bottomTools .tools {
+  height: 5em;
+  border-bottom: 1px solid #000
+}
+
+.chat .container .bottomTools .postMes {
+  position: relative;
+  height: 10em
+}
+
+.chat .container .bottomTools .postMes a, .chat .container .bottomTools .postMes textarea {
+  display: block
+}
+
+.chat .container .bottomTools .postMes textarea {
+  width: 100%;
+  height: 99%;
+  border: 0
+}
+
+.chat .container .bottomTools .postMes a {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 4em;
+  height: 2em;
+  background-color: #000;
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+  line-height: 2em
+}
+
+.login {
+  display: none;
+}
+
+#nameKuang span, #nameKuang i {
+  display: inline-block;
+  margin-left: 3%;
+}
+
+#nameKuang span:nth-child(1) {
+  margin-left: 0;
+}
+
+.mesPanel p, .mesPanel h4 {
+  margin-top: 0.5em;
+}
+@keyframes big {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+@-webkit-keyframes big {
+  0% {
+    transform: scale(0)
+  }
+  50% {
+    transform: scale(1.5)
+  }
+  to {
+    transform: scale(1)
+  }
+}
+
+@keyframes loginInfo {
+  0% {
+    transform: translateY(-30em)
+  }
+  to {
+    transform: translate(0)
+  }
+}
+
+@-webkit-keyframes loginInfo {
+  0% {
+    transform: translateY(-30em)
+  }
+  to {
+    transform: translate(0)
+  }
+}
+
+
+/*# sourceMappingURL=chat.css.map */

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+  <!-- welcome -->
+  <div class="pre">
+    <div class="welcome">
+      <p>Welcome</p>
+      <p>畅聊之前，先给自己取一个名字吧</p>
+    </div>
+    <div class="login">
+      <div class="login-inner">
+        <input type="text" placeholder="输入一个名字...">
+        <a href="javascript:;">哪位上神?</a>
+      </div>
+    </div>
+  </div>
+  <!-- chat -->
+  <div class="chat">
+    <div class="container">
+      <div class="mesPanel" id="mesinfo">
+        <div id="nameKuang"></div>
+      </div>
+      <div class="bottomTools">
+        <div class="tools"></div>
+        <div class="postMes">
+          <textarea></textarea>
+          <a href="javascript:;">发送</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/chat.js"></script>
+
+</html>
