@@ -26,22 +26,6 @@
     ga('create', 'UA-98819121-1', 'auto');
     ga('send', 'pageview');
   </script>
-  <!-- <script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-// var disqus_config = function () {
-// this.page.url = "http://xinyi.s1.natapp.cc/";  // Replace PAGE_URL with your page's canonical URL variable
-// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-// };
-// (function() { // DON'T EDIT BELOW THIS LINE
-// var d = document, s = d.createElement('script');
-// s.src = 'https://https-lirunnan-github-io-charming-github-io-blog.disqus.com/embed.js';
-// s.setAttribute('data-timestamp', +new Date());
-// (d.head || d.body).appendChild(s);
-// })();
- </script> -->
-  <!-- <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
 </head>
 
 <body>
@@ -88,27 +72,35 @@
         <p class="statement">针对类似移动端小型页面,循环渲染数据时,采用angualr或vue太浪费,用模板引擎取代上乘之选</p>
       </div>
     </div>
-    <!-- <div id="disqus_thread" style="margin-top:2em"></div> -->
-    <!-- 来必力City版安装代码 -->
-    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkxMC81NDc5">
-      <script type="text/javascript">
-        (function(d, s) {
-          var j, e = d.getElementsByTagName(s)[0];
-
-          if (typeof LivereTower === 'function') {
-            return;
-          }
-
-          j = d.createElement(s);
-          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-          j.async = true;
-
-          e.parentNode.insertBefore(j, e);
-        })(document, 'script');
-      </script>
-      <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+    <div class="group">
+      <a class="title" href="tpl/comment.html">青梅煮一煮开源评论模块</a>
+      <div class="example">
+        <p class="statement">编写个人博客，微论坛之流时，经常需要用到一些开源的评论模块，与读者有个互动交流。
+          在此处，来看几个，对比一下</p>
+      </div>
     </div>
-    <!-- City版安装代码已完成 -->
+    <div class="lbl">
+      <!-- 来必力City版安装代码 -->
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkxMC81NDc5" class="lv">
+        <script type="text/javascript">
+          (function(d, s) {
+            var j, e = d.getElementsByTagName(s)[0];
+
+            if (typeof LivereTower === 'function') {
+              return;
+            }
+
+            j = d.createElement(s);
+            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+            j.async = true;
+
+            e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+      </div>
+      <!-- City版安装代码已完成 -->
+    </div>
   </section>
   <div class="liuxing"></div>
 </body>

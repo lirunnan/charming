@@ -2,301 +2,301 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>新一杂记之this</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/star.css">
-    <link rel="stylesheet" media="(max-width: 800px)" href="../css/overPhone.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新一杂记之this</title>
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/star.css">
+  <link rel="stylesheet" media="(max-width: 800px)" href="../css/overPhone.css" />
 </head>
 
 <body>
-    <div class="this-content">
-        <a href="../index.html" class="back">back</a>
-        <h1>This</h1>
-        <div class="container">
-            <div class="this_group">
-                <h2>隐式绑定</h2>
-                <p>一般来讲，谁调用了方法，这个方法的this就指向谁 : </p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(){</p>
-                        <p>console.log(this.a);</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var a = 3;
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj = {</p>
-                        <p>a: 2</p>
-                        <p>foo: foo</p>
-                        <p>};</p>
-                    </div>
-                    <div class="content-inner">
-                        obj.foo <span>//输出2，obj调用foo，foo中this原型指向obj</span>
-                    </div>
-                </div>
-                <p>如果存在多次调用，
-                    <span class="notice">对象属性引用链只有上一层或者说最后一层再调用位置起作用</span></p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo{</p>
-                        <p>console.log(this.a);</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj2 = {</p>
-                        <p>a: 42,</p>
-                        <p>foo: foo</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj1 = {</p>
-                        <p>a: 2,</p>
-                        <p>obj2: obj2</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        obj1.obj2.foo(); <span>// 42</span>
-                    </div>
-                </div>
-                <h2>隐式丢失</h2>
-                <p>一个常见的this绑定问题就是被<span class="notice">隐式绑定</span>的函数会丢失绑定对象， 也就是说this绑定到了全局上，原型链也只指向了全局
-                </p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(){ console.log(this.a) }</p>
-                        <p>var obj1 = {</p>
-                        <p>a: 2,</p>
-                        <p>foo: foo</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var bar = obj1.foo; <span>// 储存函数的变量变更，函数地址存入一个叫bar的变量容器里</span>
-                    </div>
-                    <div class="content-inner">
-                        var a = "oops, gloabal"; <span>// a在全局</span>
-                    </div>
-                    <div class="content-inner">
-                        bar(); <span>// "oops, global"</span>
-                    </div>
-                </div>
-                <p>
-                    <span class="notice">
+  <div class="wrap">
+    <a href="../index.html" class="back">back</a>
+    <h1>This</h1>
+    <div class="container">
+      <div class="group">
+        <h2>隐式绑定</h2>
+        <p>一般来讲，谁调用了方法，这个方法的this就指向谁 : </p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(){</p>
+            <p>console.log(this.a);</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var a = 3;
+          </div>
+          <div class="content-inner">
+            <p>var obj = {</p>
+            <p>a: 2</p>
+            <p>foo: foo</p>
+            <p>};</p>
+          </div>
+          <div class="content-inner">
+            obj.foo <span>//输出2，obj调用foo，foo中this原型指向obj</span>
+          </div>
+        </div>
+        <p>如果存在多次调用，
+          <span class="notice">对象属性引用链只有上一层或者说最后一层再调用位置起作用</span></p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo{</p>
+            <p>console.log(this.a);</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            <p>var obj2 = {</p>
+            <p>a: 42,</p>
+            <p>foo: foo</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            <p>var obj1 = {</p>
+            <p>a: 2,</p>
+            <p>obj2: obj2</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            obj1.obj2.foo(); <span>// 42</span>
+          </div>
+        </div>
+        <h2>隐式丢失</h2>
+        <p>一个常见的this绑定问题就是被<span class="notice">隐式绑定</span>的函数会丢失绑定对象， 也就是说this绑定到了全局上，原型链也只指向了全局
+        </p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(){ console.log(this.a) }</p>
+            <p>var obj1 = {</p>
+            <p>a: 2,</p>
+            <p>foo: foo</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var bar = obj1.foo; <span>// 储存函数的变量变更，函数地址存入一个叫bar的变量容器里</span>
+          </div>
+          <div class="content-inner">
+            var a = "oops, gloabal"; <span>// a在全局</span>
+          </div>
+          <div class="content-inner">
+            bar(); <span>// "oops, global"</span>
+          </div>
+        </div>
+        <p>
+          <span class="notice">
                     虽然bar是obj.foo的一个引用，但是实际上，它引用的是foo函数本身，因此此时的bar()其实是一个不带任何修饰的函数调用，因此应用了默认绑定
                   </span>
-                </p>
-                <p>一个更微妙、更常见并且更出乎意料的情况发生在 <span class="notice">传入回调函数时：</span></p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(){ console.log( this.a ) }</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>function dooFoo(fn){</p>
-                        <p><span>// fn其实引用的事 foo</span></p>
-                        <p>fn(); <span>// 此处为调用位置</span></p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj = {</p>
-                        <p>a: 2,</p>
-                        <p>foo: foo</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var a = "平凡你我，改变世界"
-                    </div>
-                    <div class="content-inner">
-                        doFoo(obj.foo); // "平凡你我，改变世界"
-                    </div>
-                </div>
-                <p>
-                    参数传递其实就是一种隐式赋值, 结果和上面一样，没传到自己声明的函数里，像传入setTimeout等，结果都一个样
-                </p>
-                <p>
-                    <span class="notice">再或者说，其实就是this永远都是指代当前对象，给函数声明新变量或是全局函数赋值，this都指向window</span>
-                </p>
-                <h2>显式绑定</h2>
-                <p>也就是指定this,像: call、apply、bind、new绑定等</p>
-                <h3>硬绑定</h3>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo( something ){</p>
-                        <p>console.log(this.a, something)</p>
-                        <p>return this.a + something</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var obj = { a: 2 }
-                    </div>
-                    <div class="content-inner">
-                        <p>var bar = function() {</p>
-                        <p>return foo.apply( obj, arguments)</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var b = bar(3); <span>// 2 3</span>
-                    </div>
-                    <div class="content-inner">
-                        console.log(b); <span>// 5</span>
-                    </div>
-                </div>
-                <p>在名为bar的函数中,foo使用apply这一方法绑定了obj，也就是说this指向了obj</p>
-                <p>同样，本例也可以使用bind：</p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>....</p>
-                        <p>var bar = foo.bind(obj)</p>
-                        <p>.....</p>
-                    </div>
-                </div>
-                <p>
-                    <span class="notice">在这里还要提一下，apply和call不同，总结来说就只有传参列表形式不同：如func.call(fn,a,b,c),
-                func.apply(fn,[a,b,c]),call传参数列表，单个传，而apply传递数组形式</span>
-                </p>
-                <h3>new绑定</h3>
-                <p>使用new来调用函数，或者说发生构造函数调用时，会自动执行下面操作：</p>
-                <ul>
-                    <li>* 创建(构造)一个全新的对象</li>
-                    <li>* 这个新对象继承原型属性</li>
-                    <li>* 这个新对象会绑定到函数调用的this</li>
-                    <li>* 如果函数没有返回其他对象，那么new表达式中的函数会自动返回这个新对象，如：</li>
-                </ul>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(a){</p>
-                        <p>this.a</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var bar = new foo(2);
-                    </div>
-                    <div class="content-inner">
-                        console.log(bar.a); <span>// 2</span>
-                    </div>
-                </div>
-                <p>使用new来调用foo(...)时，我们会构造一个新对象并把它绑定到foo(...)调用中的this上。new是最后一种可以影响函数调用时this绑定行为的方法，我们称之为new绑定。</p>
-                <h2>this的优先级</h2>
-                <p>一般来讲，<span class="notice">默认绑定的优先级是四条规则中最低的，所以可以暂时忽略</span></p>
-                <p>问题来了，隐式绑定和显示绑定哪个更有优先一些咧</p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(a) {</p>
-                        <p>console.log(this.a)</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj1 = {</p>
-                        <p>a: 2,</p>
-                        <p>foo: foo</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var obj2 = {</p>
-                        <p>a: 3,</p>
-                        <p>foo: foo</p>
-                        <p>}</p>
-                    </div>
-                    <div class="contnet-inner">
-                        <p>obj1.foo(); <span>// 2</span></p>
-                        <p>obj2.foo(); <span>// 3</span></p>
-                    </div>
-                    <div class="content-inner">
-                        <p>obj1.foo.call(obj2); <span>// 3</span></p>
-                        <p>obj2.foo.call(obj1); <span>// 2</span></p>
-                    </div>
-                </div>
-                <p>由此可见，<span class="notice">显示绑定优先级更高</span>,找bug时应该优先考虑是否存在显示绑定</p>
-                <p>接下来，我们搞清除<span class="notice">new绑定</span>和<span class="notice">隐式绑定</span>谁更优先</p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(some){</p>
-                        <p>this.a = some</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var obj1 = { foo: foo }
-                    </div>
-                    <div class="content-inner">
-                        var obj2 = {}
-                    </div>
-                    <div class="content-inner">
-                        <p>obj1.foo(2);</p>
-                        <p>console.log(obj1.a);<span>// 2</span></p>
-                    </div>
-                    <div class="content-inner">
-                        <p>obj1.foo.call(obj2,3);</p>
-                        <p>console.log(obj2.a);<span>// 3</span></p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var bar = new obj1.foo(4)</p>
-                        <p>console.log(obj1.a);<span>// 2</span></p>
-                        <p>console.log(bar.a);<span>// 4</span></p>
-                    </div>
-                </div>
-                <p>显而易见，<span class="notice">new绑定比<隐式绑定优先级高</span></p>
-                <p>so,new绑定和显示绑定谁更优先呢</p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo(some){</p>
-                        <p>this.a = some</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var obj1 = {}
-                    </div>
-                    <div class="content-inner">
-                        <p>var bar = foo.bind(obj1);</p>
-                        <p>bar(2);</p>
-                        <p>console.log(obj1.a); <span>// 2</span></p>
-                    </div>
-                    <div class="content-inner">
-                        <p>var baz = new bar(3);</p>
-                        <p>console.log(obj1.a); <span>// 2</span></p>
-                        <p>console.log(bar.a); <span>// 3</span></p>
-                    </div>
-                </div>
-                <p>这就证明了<span class="notice">new绑定</span>修改了<span class="notice">硬绑定</span>中的this</p>
-                <p>所以<span class="notice">new绑定的优先级比显式绑定更高</span></p>
-                <h3 class="notice">优先级:new绑定 > 显式绑定 > 隐式绑定</h3>
-                <h2>This在箭头函数中的应用</h2>
-                <p>箭头函数不使用this的四种标准规则，而是根据外层（函数或者全局）作用域来决定this</p>
-                <p>来看一下作用域:</p>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>function foo() {</p>
-                        <p>return (a) => {</p>
-                        <p><span>// this继承自foo()</span></p>
-                        <p>console.log(this.a)</p>
-                        <p>};</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        var obj1 = { a: 2 };
-                    </div>
-                    <div class="content-inner">
-                        var obj2 = { a: 3 }
-                    </div>
-                    <div class="content-inner">
-                        <p>var bar = foo.call(obj1);</p>
-                        <p>bar.foo(obj2); <span>// 竟然是2</span></p>
-                    </div>
-                </div>
-                <p>foo()内部创建的箭头函数会捕获调用时foo()的this。由于foo()的this绑定到obj1，bar（引用箭头函数）的this也会绑定到obj1，箭头函数的绑定无法被修改。（new也不行!）</p>
-               <h2>总结</h2>
-               <p>寻找this的绑定位置,即this所指向的那个对象，可以看看以下四点:</p>
-               <ul class="sum">
-                 <li>* new调用，指向新创建(构造)的对象</li>
-                 <li>* call、apply或者bind，指向方法里指定的对象</li>
-                 <li>* 由上下文调用，指向上下文对象</li>
-                 <li>* 严格模式下指向undefined,否则指向全局</li>
-               </ul>
-            </div>
+        </p>
+        <p>一个更微妙、更常见并且更出乎意料的情况发生在 <span class="notice">传入回调函数时：</span></p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(){ console.log( this.a ) }</p>
+          </div>
+          <div class="content-inner">
+            <p>function dooFoo(fn){</p>
+            <p><span>// fn其实引用的事 foo</span></p>
+            <p>fn(); <span>// 此处为调用位置</span></p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            <p>var obj = {</p>
+            <p>a: 2,</p>
+            <p>foo: foo</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var a = "平凡你我，改变世界"
+          </div>
+          <div class="content-inner">
+            doFoo(obj.foo); // "平凡你我，改变世界"
+          </div>
         </div>
+        <p>
+          参数传递其实就是一种隐式赋值, 结果和上面一样，没传到自己声明的函数里，像传入setTimeout等，结果都一个样
+        </p>
+        <p>
+          <span class="notice">再或者说，其实就是this永远都是指代当前对象，给函数声明新变量或是全局函数赋值，this都指向window</span>
+        </p>
+        <h2>显式绑定</h2>
+        <p>也就是指定this,像: call、apply、bind、new绑定等</p>
+        <h3>硬绑定</h3>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo( something ){</p>
+            <p>console.log(this.a, something)</p>
+            <p>return this.a + something</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var obj = { a: 2 }
+          </div>
+          <div class="content-inner">
+            <p>var bar = function() {</p>
+            <p>return foo.apply( obj, arguments)</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var b = bar(3); <span>// 2 3</span>
+          </div>
+          <div class="content-inner">
+            console.log(b); <span>// 5</span>
+          </div>
+        </div>
+        <p>在名为bar的函数中,foo使用apply这一方法绑定了obj，也就是说this指向了obj</p>
+        <p>同样，本例也可以使用bind：</p>
+        <div class="content">
+          <div class="content-inner">
+            <p>....</p>
+            <p>var bar = foo.bind(obj)</p>
+            <p>.....</p>
+          </div>
+        </div>
+        <p>
+          <span class="notice">在这里还要提一下，apply和call不同，总结来说就只有传参列表形式不同：如func.call(fn,a,b,c),
+                func.apply(fn,[a,b,c]),call传参数列表，单个传，而apply传递数组形式</span>
+        </p>
+        <h3>new绑定</h3>
+        <p>使用new来调用函数，或者说发生构造函数调用时，会自动执行下面操作：</p>
+        <ul>
+          <li>* 创建(构造)一个全新的对象</li>
+          <li>* 这个新对象继承原型属性</li>
+          <li>* 这个新对象会绑定到函数调用的this</li>
+          <li>* 如果函数没有返回其他对象，那么new表达式中的函数会自动返回这个新对象，如：</li>
+        </ul>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(a){</p>
+            <p>this.a</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var bar = new foo(2);
+          </div>
+          <div class="content-inner">
+            console.log(bar.a); <span>// 2</span>
+          </div>
+        </div>
+        <p>使用new来调用foo(...)时，我们会构造一个新对象并把它绑定到foo(...)调用中的this上。new是最后一种可以影响函数调用时this绑定行为的方法，我们称之为new绑定。</p>
+        <h2>this的优先级</h2>
+        <p>一般来讲，<span class="notice">默认绑定的优先级是四条规则中最低的，所以可以暂时忽略</span></p>
+        <p>问题来了，隐式绑定和显示绑定哪个更有优先一些咧</p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(a) {</p>
+            <p>console.log(this.a)</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            <p>var obj1 = {</p>
+            <p>a: 2,</p>
+            <p>foo: foo</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            <p>var obj2 = {</p>
+            <p>a: 3,</p>
+            <p>foo: foo</p>
+            <p>}</p>
+          </div>
+          <div class="contnet-inner">
+            <p>obj1.foo(); <span>// 2</span></p>
+            <p>obj2.foo(); <span>// 3</span></p>
+          </div>
+          <div class="content-inner">
+            <p>obj1.foo.call(obj2); <span>// 3</span></p>
+            <p>obj2.foo.call(obj1); <span>// 2</span></p>
+          </div>
+        </div>
+        <p>由此可见，<span class="notice">显示绑定优先级更高</span>,找bug时应该优先考虑是否存在显示绑定</p>
+        <p>接下来，我们搞清除<span class="notice">new绑定</span>和<span class="notice">隐式绑定</span>谁更优先</p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(some){</p>
+            <p>this.a = some</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var obj1 = { foo: foo }
+          </div>
+          <div class="content-inner">
+            var obj2 = {}
+          </div>
+          <div class="content-inner">
+            <p>obj1.foo(2);</p>
+            <p>console.log(obj1.a);<span>// 2</span></p>
+          </div>
+          <div class="content-inner">
+            <p>obj1.foo.call(obj2,3);</p>
+            <p>console.log(obj2.a);<span>// 3</span></p>
+          </div>
+          <div class="content-inner">
+            <p>var bar = new obj1.foo(4)</p>
+            <p>console.log(obj1.a);<span>// 2</span></p>
+            <p>console.log(bar.a);<span>// 4</span></p>
+          </div>
+        </div>
+        <p>显而易见，<span class="notice">new绑定比<隐式绑定优先级高</span></p>
+        <p>so,new绑定和显示绑定谁更优先呢</p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo(some){</p>
+            <p>this.a = some</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var obj1 = {}
+          </div>
+          <div class="content-inner">
+            <p>var bar = foo.bind(obj1);</p>
+            <p>bar(2);</p>
+            <p>console.log(obj1.a); <span>// 2</span></p>
+          </div>
+          <div class="content-inner">
+            <p>var baz = new bar(3);</p>
+            <p>console.log(obj1.a); <span>// 2</span></p>
+            <p>console.log(bar.a); <span>// 3</span></p>
+          </div>
+        </div>
+        <p>这就证明了<span class="notice">new绑定</span>修改了<span class="notice">硬绑定</span>中的this</p>
+        <p>所以<span class="notice">new绑定的优先级比显式绑定更高</span></p>
+        <h3 class="notice">优先级:new绑定 > 显式绑定 > 隐式绑定</h3>
+        <h2>This在箭头函数中的应用</h2>
+        <p>箭头函数不使用this的四种标准规则，而是根据外层（函数或者全局）作用域来决定this</p>
+        <p>来看一下作用域:</p>
+        <div class="content">
+          <div class="content-inner">
+            <p>function foo() {</p>
+            <p>return (a) => {</p>
+            <p><span>// this继承自foo()</span></p>
+            <p>console.log(this.a)</p>
+            <p>};</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner">
+            var obj1 = { a: 2 };
+          </div>
+          <div class="content-inner">
+            var obj2 = { a: 3 }
+          </div>
+          <div class="content-inner">
+            <p>var bar = foo.call(obj1);</p>
+            <p>bar.foo(obj2); <span>// 竟然是2</span></p>
+          </div>
+        </div>
+        <p>foo()内部创建的箭头函数会捕获调用时foo()的this。由于foo()的this绑定到obj1，bar（引用箭头函数）的this也会绑定到obj1，箭头函数的绑定无法被修改。（new也不行!）</p>
+        <h2>总结</h2>
+        <p>寻找this的绑定位置,即this所指向的那个对象，可以看看以下四点:</p>
+        <ul class="sum">
+          <li>* new调用，指向新创建(构造)的对象</li>
+          <li>* call、apply或者bind，指向方法里指定的对象</li>
+          <li>* 由上下文调用，指向上下文对象</li>
+          <li>* 严格模式下指向undefined,否则指向全局</li>
+        </ul>
+      </div>
     </div>
+  </div>
 </body>
 <script src="../js/jquery-1.12.4.min.js"></script>
 <!-- <script src="js/bootstrap.min.js"></script> -->

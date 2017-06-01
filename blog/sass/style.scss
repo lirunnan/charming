@@ -91,12 +91,7 @@ section {
   }
 }
 
-.gulp-content,
-.moban-content,
-.mobile-content,
-.reg-content,
-.sticky-content,
-.this-content {
+.wrap {
   color: $color;
 
   .notice {
@@ -114,6 +109,9 @@ section {
   h2 {
     color: #fff;
     margin-top: 1em;
+    a{
+      color: #fff;
+    }
   }
 
   h4,
@@ -130,12 +128,7 @@ section {
       margin-top: 2rem;
     }
 
-    .gulp_group,
-    .moban_group,
-    .mobile_group,
-    .reg_group,
-    .sticky_group,
-    .this_group {
+    .group {
       margin-top: 2rem;
 
       ul {
@@ -342,4 +335,8 @@ section {
   to {
     opacity: 0;
   }
+}
+
+.lbl {
+  margin-top: 2em;
 }
