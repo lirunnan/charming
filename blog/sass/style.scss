@@ -109,7 +109,8 @@ section {
   h2 {
     color: #fff;
     margin-top: 1em;
-    a{
+
+    a {
       color: #fff;
     }
   }
@@ -169,10 +170,12 @@ section {
       min-height: 2rem;
       margin-top: 1rem;
       color: #fff;
+      overflow: auto;
 
       .content-inner {
         margin-top: 1rem;
         font-size: 1rem;
+        vertical-align: top;
 
         .txt_mid {
           p {
@@ -339,4 +342,47 @@ section {
 
 .lbl {
   margin-top: 2em;
+}
+@mixin btn {
+  display: inline-block;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 1em #fff inset;
+  border-radius: 0.5em;
+}
+
+.right {
+  float: right;
+
+  a {
+    width: 2em;
+    @include btn;
+  }
+
+  .showRun {
+    width: 4em;
+  }
+
+  .show {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+}
+
+.jumpTokuayu {
+  display: block;
+  width: 5em;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 1em #fff inset;
+}
+
+.azhu {
+  margin-top: 2em;
+
+  a {
+    @include btn;
+    width: 5em;
+  }
 }

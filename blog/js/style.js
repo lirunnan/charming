@@ -33,6 +33,8 @@ if (document.getElementById("time")) {
     }, 1000)
   }
 }
+
+//  opacity linear
 var div = document.getElementsByTagName("div"),
   num = 0,
   j = setInterval(function() {
@@ -44,6 +46,7 @@ var div = document.getElementsByTagName("div"),
     }
   }, 200);
 
+// 禁止f12 右键
 function click(e) {
   if (document.all) {
     if (event.button == 2 || event.button == 3) {
@@ -68,4 +71,47 @@ document.onkeydown = document.onkeyup = document.onkeypress = function() {
     window.event.returnValue = false;
     return (false);
   }
+}
+// timu.html demo show
+// 闭包
+var right = document.getElementsByClassName("right");
+if (right.length > 0) {
+  var a = right[0].getElementsByTagName("a");
+  for (var i = 0; i < a.length; i++) {
+    a[i].onclick = (function(i) {
+      return function() {
+        alert(i + 1);
+      }
+    })(i)
+  }
+}
+var show = document.getElementsByClassName("show");
+var run = document.getElementsByClassName("showRun");
+// 数组去重
+var arr = [9, 9, 111, 2, 3, 4, 4, 5, 7];
+var sortedArr = arr.sort();
+var results = [];
+for (var i = 0; i < arr.length; i++) {
+  if (sortedArr[i + 1] != sortedArr[i]) {
+    results.push(sortedArr[i]);
+  }
+}
+// console.log(results);
+
+// 数组排序
+var brr = [1, 11, 2, 22, 33, 4, 3, 44, 5];
+var brrSort = brr.sort(function(a, b) {
+  return a - b;
+})
+// console.log(brrSort);
+var showTotal = {
+  "0": results,
+  "1": brrSort
+};
+for (var i = 0; i < run.length; i++) {
+  run[i].onclick = (function(i) {
+    return function() {
+      show[i].innerHTML = "[" + showTotal[i] + "]";
+    }
+  })(i);
 }

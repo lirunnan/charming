@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>新一杂记之跨域问题</title>
+  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/star.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <a href="https://lirunnan.github.io/charming.github.io/blog/" class="back">back</a>
+    <h1>跨域问题</h1>
+    <div class="container">
+      <div class="group">
+        <h2>关于域</h2>
+        <p>域的关键在于协议、域名、端口,这其中有任何一个不相同,都会被称作不同的域</p>
+        <h3>如何解决跨域问题:</h3>
+        <p>
+          方法有多种,可参考<a href="http://blog.csdn.net/joyhen/article/details/21631833">跨域方法</a>, 这里简单介绍jsonp方法,其他的还有像iframe,cors,postMessage等等
+        </p>
+        <h3>手写跨域(jsonp)</h3>
+        <div class="content">
+          <div class="content-inner" style="display:inline-block">
+            <p>// 1. get</p>
+            <p>// jsonp.js</p>
+            <p>let jsonp = (data,cb)=> {</p>
+            <p> // 处理请求参数</p>
+            <p> const {url,qs} = data</p>
+            <p> // 定义callback名称</p>
+            <p> const cb_name = `cb_${Math.random().toString().replace('.','')}`;</p>
+            <p> // // 挂载callback</p>
+            <p> window[cb_name] = cb;</p>
+            <p> // // 处理url</p>
+            <p> let symbol = (url.indexOf('?')===-1) ? '?' : '&';</p>
+            <p> let params_from_qs = '';</p>
+            <p> for(let key in qs) {</p>
+            <p>params_from_qs += `${key}=${qs[key]}&`;</p>
+            <p> }</p>
+            <p>let complete_url = `${url}${symbol}${params_from_qs}callback=${cb_name}`;</p>
+            <p> // 挂载script</p>
+            <p> let script = document.createElement('script');</p>
+            <p> script.src = complete_url;</p>
+            <p> document.body.appendChild(script);</p>
+            <p>}</p>
+          </div>
+          <div class="content-inner" style="display:inline-block;margin-left:7em;">
+            <p>2 .post</p>
+            <p>var request = new XMLHttpRequest();</p>
+            <p> request.open('POST', url, true);</p>
+            <p> var data = JSON.stringify({</p>
+            <p> data: value</p>
+            <p> });</p>
+            <p>request.withCredentials = true;</p>
+            <p> request.setRequestHeader("Content-type","application/x-www-form-urlencoded");</p>
+            <p> request.send(data);</p>
+            <p> request.onreadystatechange = function() {</p>
+            <p> if (request.readyState === 4) {</p>
+            <p> if (request.status === 200) {</p>
+            <p> } else {</p>
+            <p> alert("发生错误：" + request.status);</p>
+            <p>}</p>
+            <p>}</p>
+            <p>}</p>
+          </div>
+          <div class="azhu"><a href="https://xiaopaning.github.io/2017/03/26/jsonp-post/">友情链接</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="../js/jquery-1.12.4.min.js"></script>
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<!-- <script src="js/angular.min.js"></script> -->
+<script src="../js/style.js"></script>
+
+</html>
