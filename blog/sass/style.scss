@@ -386,3 +386,46 @@ section {
     width: 5em;
   }
 }
+
+.groupNinedemo {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border: 1px solid #aaa;
+  margin-top: 1em;
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30%;
+    height: 30%;
+    line-height: 65px;
+    margin-top: 2%;
+    text-align: center;
+    background-color: #aaa;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.col {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 10%;
+}
+
+.runBtn {
+  p {
+    margin-top: 1em;
+  }
+
+  a {
+    width: 5em;
+    @include btn;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 5%;
+  }
+}

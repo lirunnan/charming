@@ -118,6 +118,65 @@
         <h2>乱入一波:黑盒测试和白盒测试方法有哪些</h2>
         <p>白盒测试: 逻辑覆盖法,主要包括语句覆盖,判断覆盖,条件覆盖,判断条件覆盖,条件组合覆盖,路径覆盖</p>
         <p>黑盒覆盖: 等价划分类,边界值分析,错误推断法</p>
+        <h2>九宫格布局</h2>
+        <p>九宫格布局这道题很多地方都有,方法也不唯一,table,float等等,在这里,小编介绍一个自以为比较方便的方法</p>
+        <div class="content">
+          <div class="content-inner col">
+           <p>demo展示:</p>
+           <div class="groupNinedemo">
+             <a href="javascript:;">1</a>
+             <a href="javascript:;">2</a>
+             <a href="javascript:;">3</a>
+             <a href="javascript:;">4</a>
+             <a href="javascript:;">5</a>
+             <a href="javascript:;">6</a>
+             <a href="javascript:;">7</a>
+             <a href="javascript:;">8</a>
+             <a href="javascript:;">9</a>
+           </div>
+          </div>
+          <div class="content-inner col">
+            <p>html :</p>
+            <p>< div class="group"></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< a href="javascript:;">< /a></p>
+            <p>< /div></p>
+          </div>
+          <div class="content-inner col">
+            <p>css :</p>
+            <p>.group {</p>
+            <p> width: 200px;</p>
+            <p> height:200px;</p>
+            <p> border:1px solid #aaa</p>
+            <p> text-align:center</p>
+            <p></p>
+            <p>}</p>
+            <p>.group a {</p>
+              <p>display: inline-block;</p>
+              <p>vertical-align: middle;</p>
+              <p>width:30%</p>
+              <p>height:30%</p>
+              <p>line-height: 65px;</p>
+              <p>margin-top: 2%;</p>
+              <p>text-align: center;</p>
+              <p>background-color: #aaa;</p>
+              <p>color:#000</p>
+              <p>text-decoration: none;</p>
+            <p>}</p>
+          </div>
+        </div>
+        <h2>this相关问题,可参考
+          <a href="this.html" style="color:#aaa">this篇</a>
+        </h2>
+        <h2>类数组: Array.prototype.slice.call(arguments)</h2>
       </div>
     </div>
   </div>

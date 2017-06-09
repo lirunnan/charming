@@ -115,3 +115,13 @@ for (var i = 0; i < run.length; i++) {
     }
   })(i);
 }
+// js常用小技巧
+var bool = 1;
+var fBool = !bool,
+  ffBool = !!bool;
+$(".runBtn a").eq(0).click(function() {
+  $(".runBtn span").eq(0).html("" + fBool + "");
+})
+$(".runBtn a").eq(1).click(function() {
+  $(".runBtn span").eq(1).html("" + ffBool + "");
+})
