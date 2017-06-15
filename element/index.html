@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="css/style_20170512.css">
+  <title>Document</title>
+  <script>
+    function setRemFontSize(baseSize, baseWidth) {
+      var baseSize = baseSize || 13,
+        baseWidth = baseWidth || 375,
+        clientWidth = document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+    }
+    setRemFontSize();
+    window.addEventListener("resize", function() {
+      setRemFontSize();
+    });
+  </script>
+</head>
+
+<body>
+  <div class="pop" onclick="popClose()">
+    <div class="popPanel">
+      <div class="popPanel-inner">
+        <div class="poptxt">
+          <h3>Gift item yang dikompetisikan:</h3>
+          <div class="poptxt_group">
+            <img src="http://media.kitty.live/upload/7dd170ab6ffb411b800c963735fdc375.png" alt="">
+            <img src="http://media.kitty.live/upload/4e89027a93854d49b7ca34180ba3035d.png" alt="">
+            <img src="http://media.kitty.live/upload/c021ff21c2b04f54877e18e9447f59f1.png" alt="">
+            <img src="http://media.kitty.live/upload/232e7a4c608a4f6bb02520cf95f777dc.png" alt="">
+            <img src="http://media.kitty.live/upload/046d9de23f844e27a69caf920387f7ed.png" alt="">
+          </div>
+          <div class="poptxt_group">
+            <h4>1. QUALIFICATION STAGE (14 – 15 Mei 2017)</h4>
+            <p>★1 moon = 1 ticket</p>
+            <p>★20 VJ akan masuk ke babak selanjutnya</p>
+            <p>★5% extra share untuk 20 VJ teratas</p>
+          </div>
+          <div class="poptxt_group">
+            <h4>2. FIVE-ELEMENT STAGE (17 – 21 Mei 2017)</h4>
+            <p>★ 1 moon = 1 ticket</p>
+            <p>★ Satu elemen di antara: Wind, Thunder, Soil, Water, Fire, akan ditentukan oleh viewers dengan memutar Spinning Wheel mulai pukul 12:00 - 18:00 per harinya. Setiap viewers hanya memiliki 1 kesempatan memutar Spinning Wheel setiap harinya sampai
+              tanggal 21 Mei. Tujuannya untuk menentukan elemen apa yang akan disandang oleh VJ per harinya.</p>
+            <p>★ Element yang terpilih setiap harinya akan menjadi elemen yang akan disandang TOP 1 VJ yang menang di setiap harinya. VJ yang menang di hari pertama tidak berkompetisi di hari berikutnya.</p>
+            <p>★ 17 Mei : Top 1 VJ diantara 20 VJ akan mendapat 15% extra share khusus dari item gift event hari ini dan menjadi VJ untuk elemen pilihan viewers hari ini.</p>
+            <p>★ 18 Mei : Top 1 VJ diantara 19 VJ akan mendapat 13% extra share khusus dari item gift event hari ini dan menjadi VJ untuk elemen pilihan viewers hari ini.</p>
+            <p>★ 19 Mei : Top 1 VJ diantara 18 VJ akan mendapat 11% extra share khusus dari item gift event hari ini dan menjadi VJ untuk elemen pilihan viewers hari ini.</p>
+            <p>★ 20 Mei : Top 1 VJ diantara 17 VJ akan mendapat 9% extra share khusus dari item gift event hari ini dan menjadi VJ untuk elemen pilihan viewers hari ini.</p>
+            <p>★ 21 Mei : Top 1 VJ diantara 16 VJ akan mendapat 7% extra share khusus dari item gift event hari ini dan menjadi VJ untuk elemen pilihan viewers hari ini.</p>
+          </div>
+          <div class="poptxt_group">
+            <h4>3. ELEMENT BATTLE STAGE（23th - 25th）</h4>
+            <p>★ Wind VS Thunder, dimana Wind akan mendapat tambahan 10% extra ticket (0,1 tiket) di babak ini.</p>
+            <p>★ Thunder VS Soil, dimana Thunder mendapat tambahan 10% extra ticket (0,1 tiket) di babak ini.</p>
+            <p>★ Soil VS Water, dimana Soil akan mendapat tambahan 10% extra ticket (0,1 tiket) di babak ini.</p>
+            <p>★ Water VS Fire, dimana Water akan mendapat tambahan 10% extra ticket (0,1 tiket) dibabak ini.</p>
+            <p>★ Fire VS Wind, dimana Fire mendapat tambahan 10% extra ticket (0,1 tiket) di babak ini.</p>
+          </div>
+          <div class="poptxt_group">
+            <h4>JADWAL BATTLE:</h4>
+            <p>★ 23 Mei : Wind VS Thunder, Soil VS Water</p>
+            <p>★ 24 Mei : Fire VS Wind, Thunder VS Soil</p>
+            <p>★ 25 Mei : Water VS Fire</p>
+          </div>
+          <div class="poptxt_group">
+            <h4>CATATAN:</h4>
+            <p>★ Jika pemenang berasal dari element yang tidak mendapatkan extra ticket 10% maka VJ tersebut akan mendapatkan 2 point.</p>
+            <p>★ Jika pemenang berasal dari element yang mendapatkan extra tiket 10% maka VJ tersebut akan mendapatkan 1 point. </p>
+            <p>★ Kalah mendapatkan 0 point.</p>
+            <p>★ ontoh: Ketika Wind VS Thunder: Jika wind menjadi pemenangnya, Wind akan mendapatkan 1 poin dan Thunder mendapatkan 0 poin. Jika Thunder menjadi pemenangnya, ,Thunder akan mendapatkan 2 poin dan Wind mendapatkan 0 poin.</p>
+          </div>
+          <div class="poptxt_group">
+            <h4>Hadiah Untuk VJ:</h4>
+            <table cellspacing=0>
+              <tr>
+                <td>Score</td>
+                <td>Dollar</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>1600</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>300</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+            </table>
+          </div>
+          <div class="poptxt_group">
+            <h4>Hadiah Untuk User:</h4>
+            <table cellspacing=0>
+              <tr>
+                <td>Ranking</td>
+                <td>Prize</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Canon EOS 750D 18-135mm STM Wifi Kamera DSRL</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Acer Aspire V3-372T White Notebook</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Apple iPhone 6 64 GB</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Segway 10inch Smartwheel</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Small Drone</td>
+              </tr>
+              <tr>
+                <td>6-10</td>
+                <td>Kitty Doll</td>
+              </tr>
+              <tr>
+                <td>11-20</td>
+                <td>T-Shirt</td>
+              </tr>
+              <tr>
+                <td>21-30</td>
+                <td>Pocket Notebook</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="header_group">
+    <div class="header">
+      <div class="light_group">
+        <div class="light"><img src="http://media.kitty.live/upload/61e3197580694290b624ab37de018511.png" alt=""></div>
+        <div class="lightDesire"><img src="http://media.kitty.live/upload/61e3197580694290b624ab37de018511.png" alt=""></div>
+      </div>
+      <img src="http://media.kitty.live/upload/487952fe8e8d4d7c8506e659c29664d8.png" alt="">
+      <a href="javascript:;" class="rules" onclick="popShow()">RULE</a>
+    </div>
+    <div class="header">
+      <div class="lightDesire"><img src="http://media.kitty.live/upload/61e3197580694290b624ab37de018511.png" alt=""></div>
+      <img src="http://media.kitty.live/upload/4ff1068e6b5a45b780f28ab53cf4a67a.png" alt="">
+      <a href="javascript:;" class="rules" onclick="popShow()">RULE</a>
+      <a href="javascript:;" class="spin">Spin</a>
+      <div class="alert" onclick="alertClose()"></div>
+      <div class="element_group">
+        <!-- soil -->
+        <div class="element">
+          <img src="http://media.kitty.live/upload/12a98073f6464d2c9f1ec02df89683b1.png" alt="">
+        </div>
+        <!-- water-->
+        <div class="element"><img src="http://media.kitty.live/upload/372b5b85c6e74a699e88caee028f041f.png" alt=""></div>
+        <!-- light -->
+        <div class="element"><img src="http://media.kitty.live/upload/ebad08264b8a435ca2b2a7f1ffbc1131.png" alt=""></div>
+        <!-- wind -->
+        <div class="element"><img src="http://media.kitty.live/upload/ea789a8052a64ad4a408301d3e35e4a7.png" alt=""></div>
+        <!-- fire -->
+        <div class="element"><img src="http://media.kitty.live/upload/26e2e70427f544b68626a25e87acfa2a.png" alt=""></div>
+        <!-- linghtning -->
+        <div class="lightning"></div>
+      </div>
+      <a href="javascript:;" class="spinBtn">
+        <img src="http://media.kitty.live/upload/d6a6c7d4880643468a5b0ef3a81cb875.png" alt="">
+      </a>
+    </div>
+    <div class="header">
+      <div class="light_group">
+        <div class="light"><img src="http://media.kitty.live/upload/61e3197580694290b624ab37de018511.png" alt=""></div>
+        <div class="lightDesire"><img src="http://media.kitty.live/upload/61e3197580694290b624ab37de018511.png" alt=""></div>
+      </div>
+      <img src="http://media.kitty.live/upload/4da135d0a6364cc99ec6ce3fc7ea6a0a.png" alt="">
+      <a href="javascript:;" class="rules" onclick="popShow()">RULE</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="rankPanel">
+      <div class="rankPanel-inner">Ranking</div>
+    </div>
+    <div class="toggle">
+      <a href="javascript:;" onclick="tog(0)" class="togBg">Top VJ</a>
+      <a href="javascript:;" onclick="tog(1)">Top User</a>
+    </div>
+    <div class="content_group">
+      <!-- step 1,2  ranking -->
+      <div class="content">
+        <div class="list_step1">
+          <div class="list"></div>
+        </div>
+        <script id="tpl" type="text/template">
+          <ul>
+            {@each rank_list as it,index}
+            <li onclick="go(${it.user_id})">
+              <div class="listPanel">
+                <div class="user_img">
+                  <img src="${it.avatar}" alt="">
+                </div>
+                <div class="rank">
+                  <div class="rank-inner">${index-(-1)}</div>
+                </div>
+              </div>
+              <div class="listPanel">
+                <p>${it.nickname}</p>
+                <p>
+                  <span class="score">Moons: <span>${it.points}</span></span>
+                  <span class="score">tickets: <span>${it.points}</span></span>
+              </div>
+            </li>
+            {@/each}
+          </ul>
+        </script>
+      </div>
+      <!-- step3 pk -->
+      <div class="content">
+        <div id="listPkVj"></div>
+        <script id="tplPkVj" type="text/template">
+          <ul>
+            {@each rank_list as it,index}
+            <li>
+              <div class="content-inner-pk">
+                <div class="pktxt">V</div>
+                <div class="inner-pk-panel">
+                  <div class="elImg">
+                    <img src="${it[0].elImg}" alt="">
+                  </div>
+                  <div class="pkMes" onclick="go(${it[0].user_id})">
+                    <span class="pkgrid"><img src="${it[0].avatar}" alt=""></span>
+                    <span class="pkgrid">
+                    <p>${it[0].nickname}</p>
+                    <p>Moons: <span>${it[0].gift_number}</span></p>
+                    <p>Tickets: <span>${it[0].points}</span></p>
+                    </span>
+                  </div>
+                  <div class="moonTimes">1 moon = 1.1 ticket</div>
+                </div>
+              </div>
+              <div class="content-inner-pk">
+                <div class="pktxt">S</div>
+                <div class="inner-pk-panel">
+                  <div class="elImg">
+                    <img src="${it[1].elImg}" alt="">
+                  </div>
+                  <div class="pkMes" onclick="go(${it[1].user_id})">
+                    <span class="pkgrid"><img src="${it[1].avatar}" alt=""></span>
+                    <span class="pkgrid">
+                  <p>${it[1].nickname}</p>
+                   <p>Moons: <span>${it[1].gift_number}</span></p>
+                    <p>Tickets: <span>${it[1].points}</span></p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {@/each}
+          </ul>
+        </script>
+        <!-- table -->
+        <table cellspacing=0 class="finalTab">
+          <tr>
+            <td></td>
+            <td>wind</td>
+            <td>thunder</td>
+            <td>soil</td>
+            <td>water</td>
+            <td>fire</td>
+          </tr>
+          <tr>
+            <td>Day1</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+          </tr>
+          <tr>
+            <td>Day2</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+          </tr>
+          <tr>
+            <td>Day3</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+          </tr>
+          <tr class="finalTotal">
+            <td>Final</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+            <td>/</td>
+          </tr>
+        </table>
+      </div>
+      <!-- user -->
+      <div class="listpkUser"></div>
+      <script id="tpl_user" type="text/template">
+        <ul>
+          {@each rank_list as it,index}
+          <li onclick="go(${it.user_id})">
+            <div class="listPanel">
+              <div class="user_img">
+                <img src="${it.avatar}" alt="">
+              </div>
+              <div class="rank">
+                <div class="rank-inner">${index-(-1)}</div>
+              </div>
+            </div>
+            <div class="listPanel">
+              <div class="userScorePanel">
+                <span class="score">${it.nickname}</span>
+                <span class="score">Sent: <span>${it.points}</span></span>
+              </div>
+            </div>
+          </li>
+          {@/each}
+        </ul>
+      </script>
+    </div>
+  </div>
+  <div class="soon">Coming soon...</div>
+
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/banner_20170512.js"></script>
+
+</html>
