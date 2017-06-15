@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/style_20170209.css">
+    <title></title>
+    <script>
+        function setRemFontSize(baseSize, baseWidth) {
+            var baseSize = baseSize || 13,
+                baseWidth = baseWidth || 320,
+                clientWidth = document.documentElement.clientWidth;
+            document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+        }
+        setRemFontSize();
+        window.addEventListener("resize", function() {
+            setRemFontSize();
+        });
+    </script>
+</head>
+
+<body ng-controller="myCtrl">
+    <div class="pre"></div>
+    <div class="header">
+        <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/9045ef1e321f492c8dd8253b44bed383.jpg" alt="">
+        <p>- <span id="step_num_fr">ALL</span> to <span id="step_num">32</span>-</p>
+        <a href="valentine_details.html" class="details" ng-click="pop()">
+            <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/d71e951cb581468b9e9688c551d8814a.png" alt="">
+        </a>
+        <div class="butter-fly">
+            <div><img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/e1422a611d4b451cb399ff7b4c957371.gif" alt=""></div>
+        </div>
+        <div class="light"></div>
+    </div>
+    <div class="VH">
+        <div class="tog">
+            <a href="javascript:;" ng-click="tog(0)">VJ</a>
+            <a href="javascript:;" ng-click="tog(1)">HERO</a>
+            <div class="flower">
+                <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/a47de8c21bee4f50874f3f66f38ece45.png" alt="">
+            </div>
+            <div class="tog_bg">
+                <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/9450d77fbc9247c68a6dd6c644234b1a.png" alt="">
+            </div>
+        </div>
+        <div class="butter-fly-right"><img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/58a1b1ff8acd4186abe8997ee4137f3e.gif" alt=""></div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="gift">
+                <a href="javascript:;" ng-click="gift(0)">
+                    <img class="fi" src="http://media.kitty.live/upload/a9a5c196fa104f89982cffe562d251a5.png" alt="">
+                    <img src="http://media.kitty.live/upload/0550ba9b0a4542f2a80f4d1aeb37f7b7.png" alt="">
+                    <p>Rose</p>
+                </a>
+                <a href="javascript:;" ng-click="gift(1)">
+                    <img class="fi" src="http://media.kitty.live/upload/40e9d563d13a48f9871471f3fbe968e2.png" alt="">
+                    <img src="http://media.kitty.live/upload/cda47807fcee4e239449b9fb5b4c5d77.png" alt="">
+                    <p>Chocolate</p>
+                </a>
+                <div class="hide hide_extra_right"></div>
+            </div>
+            <div id="heart">
+                <img src="http://media.kitty.live/upload/7b3ffe22aa0f4ed79baf4a14079e0ed8.gif" alt="">
+            </div>
+            <!--  -->
+            <div class="no_mes">Coming soon...</div>
+            <!--  -->
+            <div class="content">
+                <div class="group_game">
+                    <ul ng-repeat="item in winner" ng-click="go(item.user_id)">
+                        <li ng-bind="$index + 1"></li>
+                        <li>
+                            <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                        </li>
+                        <li ng-bind="item.nickname" </li>
+                            <li ng-bind="item.ticket"></li>
+                    </ul>
+                    <div class="line"></div>
+                    <ul ng-repeat="item in loser" ng-click="go(item.user_id)" class="ttf">
+                        <li ng-bind="$index + num"></li>
+                        <li>
+                            <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                        </li>
+                        <li ng-bind="item.nickname" </li>
+                            <li ng-bind="item.ticket"></li>
+                    </ul>
+                </div>
+                <ul class="hero" ng-repeat="item in hero" ng-click="go(item.user_id)">
+                    <li ng-bind="$index + 1"></li>
+                    <li>
+                        <div><img ng-src="{{item.avatar_url}}" alt=""></div>
+                    </li>
+                    <li ng-bind="item.nickname"></li>
+                    <li ng-bind="item.ticket"></li>
+                </ul>
+            </div>
+        </div>
+        <div class="peach flower1">
+            <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/a47de8c21bee4f50874f3f66f38ece45.png" alt="">
+        </div>
+        <div class="huaban flower1">
+            <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/d72dc7b5252d4396b152e974ff24aca3.png" alt="">
+        </div>
+    </div>
+    <div class="footer">
+        <img src="http://s3-us-west-2.amazonaws.com/solomedia/upload/cec913e693904566bdd31a3627e0e80e.png" alt="">
+    </div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/banner_20170209.js"></script>
+<script src="js/banner_20170209_flower.js"></script>
+<script>
+    $(document).snowfall('clear');
+    $(document).snowfall({
+        image: "http://s3-us-west-2.amazonaws.com/solomedia/upload/d72dc7b5252d4396b152e974ff24aca3.png",
+        flakeCount: 6,
+        minSize: 25,
+        maxSize: 42
+    });
+</script>
+
+</html>

@@ -1,0 +1,184 @@
+组队资格赛阶段说明：
+11 =》 N选32
+12 =》 32选16
+13 =》 16选8
+14 =》 8选4
+
+1、组队资格赛巧克力接口
+地址：
+/v1/activity/valentine/chocolate/rank
+
+结果：
+{
+  "rank_list": [
+    {
+      "nickname": "โบ",
+      "ticket": 92,
+      "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/โบ.jpg",
+      "user_id": 100789
+    },
+    {
+      "nickname": "แยม",
+      "ticket": 84,
+      "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แยม.jpg",
+      "user_id": 101151
+    },
+  ],
+  "message": "OK",
+  "code": 1,
+  "activity_stage": 11
+}
+
+2、组队资格赛玫瑰花接口
+地址：
+/v1/activity/valentine/chocolate/rank
+
+结果：
+{
+  "rank_list": [
+    {
+      "nickname": "โบ",
+      "ticket": 92,
+      "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/โบ.jpg",
+      "user_id": 100789
+    },
+    {
+      "nickname": "แยม",
+      "ticket": 84,
+      "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แยม.jpg",
+      "user_id": 101151
+    },
+  ],
+  "message": "OK",
+  "code": 1,
+  "activity_stage": 11
+}
+
+3、贡献榜接口
+地址：
+/v1/activity/valentine/contribution/rank
+
+结果：
+{
+  "rank_list": [
+    {
+      "nickname": "sun",
+      "ticket": 3462,
+      "avatar_url": "",
+      "user_id": 975837
+    }
+  ],
+  "message": "OK",
+  "code": 1
+}
+
+4、分组信息接口
+地址：
+/v1/activity/valentine/loop/group
+
+结果：
+{
+  "message": "OK",
+  "code": 1,
+  "groups": {
+    "A": {
+      "integral": 0,
+      "members": [
+        {
+          "nickname": "ออย",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/ออย.jpg",
+          "user_id": 101026
+        },
+        {
+          "nickname": "เกรช",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/เกรช.jpg",
+          "user_id": 100864
+        }
+      ]
+    },
+    "C": {
+      "integral": 0,
+      "members": [
+        {
+          "nickname": "พลอย",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/พลอย.jpg",
+          "user_id": 100551
+        },
+        {
+          "nickname": "แมว",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แมว.jpg",
+          "user_id": 101038
+        }
+      ]
+    },
+    "B": {
+      "integral": 0,
+      "members": [
+        {
+          "nickname": "แยม",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แยม.jpg",
+          "user_id": 101151
+        },
+        {
+          "nickname": "แอร์",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แอร์.jpg",
+          "user_id": 101045
+        }
+      ]
+    },
+    "D": {
+      "integral": 0,
+      "members": [
+        {
+          "nickname": "ส้มส้ม",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/ส้มส้ม.jpg",
+          "user_id": 100878
+        },
+        {
+          "nickname": "กุ๊กกิ๊ก",
+          "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/กุ๊กกิ๊ก.jpg",
+          "user_id": 101000
+        }
+      ]
+    }
+  }
+}
+5、循环对决赛接口
+地址：
+/v1/activity/valentine/loop/rank
+
+结果：
+{
+  "rank_list": {
+    "right_rank": [
+      {
+        "nickname": "แยม",
+        "ticket": 0,
+        "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แยม.jpg",
+        "user_id": 101151
+      },
+      {
+        "nickname": "แอร์",
+        "ticket": 0,
+        "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/แอร์.jpg",
+        "user_id": 101045
+      }
+    ],
+    "left_rank": [
+      {
+        "nickname": "ออย",
+        "ticket": 0,
+        "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/ออย.jpg",
+        "user_id": 101026
+      },
+      {
+        "nickname": "เกรช",
+        "ticket": 0,
+        "avatar_url": "https://s3-ap-southeast-1.amazonaws.com/kittylive-media/fuser/เกรช.jpg",
+        "user_id": 100864
+      }
+    ]
+  },
+  "message": "OK",
+  "code": 1
+}

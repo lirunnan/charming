@@ -1,0 +1,514 @@
+$pink: #cf1d64;
+$pink_bg: #FFD4EB;
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Helvetica Neue",arial,sans-serif;
+    -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+    -webkit-backface-visibility: hidden;
+}
+
+body,
+html {
+    overflow-x: hidden !important;
+}
+
+body {
+    background-color: #F679B3;
+    font-size: 0;
+}
+
+.pre {
+    background-image: url("http://s3-us-west-2.amazonaws.com/solomedia/upload/d72dc7b5252d4396b152e974ff24aca3.png");
+}
+
+.header {
+    width: 100%;
+    height: 0;
+    padding-bottom: 85%;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-shadow: 0 0 0.3rem #fff, 0 0 0.8rem #fff, 0 0 1rem #fff;
+        color: #eb378f;
+        text-align: center;
+        margin-top: -35%;
+    }
+
+    a {
+        display: block;
+        width: 41.8%;
+        border-radius: 1rem;
+        margin: 10% auto 0;
+    }
+
+    .butter-fly div {
+        position: absolute;
+        width: 20%;
+        top: 17%;
+        left: 0;
+    }
+}
+
+.tog {
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 1.5rem;
+    background-color: $pink_bg;
+    box-shadow: 0 0 0.2rem $pink;
+    position: relative;
+    height: 2.2rem;
+
+    a {
+        display: inline-block;
+        color: $pink;
+        font-weight: bold;
+        font-size: 1.1rem;
+        width: 49%;
+        height: 2.2rem;
+        line-height: 2.2rem;
+        text-align: center;
+        overflow: hidden;
+        position: relative;
+        z-index: 2;
+    }
+
+    .flower {
+        position: absolute;
+        width: 30%;
+        top: -20%;
+        left: 35%;
+        z-index: 10;
+        transition: transform 1s linear;
+    }
+
+    .tog_bg {
+        width: 57%;
+        position: absolute;
+        top: -1%;
+        left: 0;
+        transition: left 0.8 ease;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.container {
+    width: 90%;
+    min-height: 16rem;
+    border-radius: 1.5rem;
+    background-color: $pink_bg;
+    margin: 2rem auto -2rem;
+    box-shadow: 0 0 0.5rem #FD55AB inset,0 0 0.2rem $pink;
+    overflow: hidden;
+    font-size: 1rem;
+    position: relative;
+
+    img {
+        width: 100%;
+    }
+
+    .gift {
+        width: 100%;
+        height: 6rem;
+        position: relative;
+
+        a {
+            display: inline-block;
+            width: 49%;
+            height: 100%;
+            text-align: center;
+            font-weight: bold;
+            line-height: 12rem;
+            position: relative;
+            z-index: 5;
+
+            p {
+                color: $pink;
+                font-size: 1rem;
+                position: absolute;
+                top: 0.1rem;
+                left: 50%;
+                transform: translate(-50%);
+                -webkit-transform: translate(-50%);
+            }
+
+            img {
+                width: 30%;
+                display: inline-block;
+                margin-bottom: 1.5rem;
+                margin-left: 1.2rem;
+            }
+
+            .fi {
+                margin-left: 0;
+            }
+        }
+
+        .hide {
+            position: absolute;
+            width: 48%;
+            height: 7rem;
+            background-color: #FF98D0;
+            border-bottom: 0.01rem solid $pink;
+            z-index: 1;
+            top: 0;
+        }
+    }
+
+    .content {
+        width: 90%;
+        margin: 3rem auto;
+        position: relative;
+        z-index: 200;
+        display: none;
+        background-color: $pink_bg;
+
+        ul {
+            margin-top: 2rem;
+
+            li {
+                width: 18%;
+                display: inline-block;
+                color: $pink;
+                line-height: 3rem;
+                height: 3rem;
+                vertical-align: middle;
+
+                &:nth-child(1) {
+                    width: 10%;
+                }
+
+                &:nth-child(2) {
+                    div {
+                        width: 3.1rem;
+                        height: 3.1rem;
+                        border-radius: 50%;
+                        background-color: $pink;
+                        border: 0.1rem solid $pink;
+                        margin: 0 auto;
+
+                        img {
+                            width: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+
+                &:nth-child(3) {
+                    margin-left: 6%;
+                    overflow: hidden;
+                    width: 35%;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                &:nth-child(4) {
+                    margin-left: 5%;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    width: 50%;
+    position: relative;
+    z-index: -2;
+
+    img {
+        width: 100%;
+    }
+}
+
+.VH,
+.main {
+    position: relative;
+}
+
+.butter-fly-right {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    right: -2rem;
+    top: -7rem;
+    z-index: 5;
+
+    img {
+        width: 100%;
+    }
+}
+
+.huaban {
+    width: 8rem;
+    height: 6rem;
+    position: absolute;
+    right: -3rem;
+    top: 4rem;
+    z-index: 5;
+
+    img {
+        width: 100%;
+    }
+}
+
+.peach {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    left: -2.5rem;
+    top: 8rem;
+    z-index: 1;
+
+    img {
+        width: 100%;
+    }
+}
+
+.hide_extra_left {
+    left: 0;
+    border-top-left-radius: 1.5rem;
+    border-right: 0.01rem solid $pink;
+}
+
+.hide_extra_right {
+    right: 0;
+    border-top-right-radius: 1.5rem;
+    border-left: 0.01rem solid $pink;
+}
+
+.light {
+    position: absolute;
+    width: 4.6rem;
+    height: 60rem;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .3)50%, rgba(255, 255, 255, 0)100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, .3)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .3)50%, rgba(255, 255, 255, 0)100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0)0, rgba(255, 255, 255, .3)50%, rgba(255, 255, 255, 0)100%);
+    -webkit-transform: skewX(-25deg);
+    -moz-transform: skewX(-25deg);
+    -webkit-transition: left 1.5s;
+    -moz-transition: left 1.5s;
+    animation: left 1.5s ease;
+    animation-fill-mode: forwards;
+    -webkit-animation: left 1.5s ease;
+    -webkit-animation-fill-mode: forwards;
+    display: none;
+}
+
+.hero {
+    // display: none;
+    margin-top: 2rem;
+}
+@keyframes left {
+    from {
+        left: -10rem;
+    }
+
+    to {
+        left: 50rem;
+    }
+}
+@-webkit-keyframes left {
+    from {
+        left: -10rem;
+    }
+
+    to {
+        left: 50rem;
+    }
+}
+
+.line {
+    width: 100%;
+    height: 0.1rem;
+    margin: 2rem auto 1rem;
+    position: relative;
+    display: none;
+
+    &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: $pink;
+        top: 0;
+        left: -90%;
+        animation: lf 10s ease infinite;
+        animation-fill-mode: forwards;
+        -webkit-animation: lf 10s ease infinite;
+        -webkit-animation-fill-mode: forwards;
+    }
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: $pink;
+        top: 0;
+        right: -90%;
+        animation: rh 10s ease infinite;
+        animation-fill-mode: forwards;
+        -webkit-animation: rh 10s ease infinite;
+        -webkit-animation-fill-mode: forwards;
+    }
+}
+@keyframes lf {
+    from {
+        left: -90%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    to {
+        left: -90%;
+    }
+}
+@-webkit-keyframes lf {
+    from {
+        left: -90%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    to {
+        left: -90%;
+    }
+}
+@keyframes rh {
+    from {
+        right: -90%;
+    }
+
+    50% {
+        right: 0;
+    }
+
+    to {
+        right: -90%;
+    }
+}
+@-webkit-keyframes rh {
+    from {
+        right: -90%;
+    }
+
+    50% {
+        right: 0;
+    }
+
+    to {
+        right: -90%;
+    }
+}
+
+#heart {
+    position: absolute;
+    width: 6rem;
+    height: 5rem;
+    left: 38%;
+    margin: 2.1rem auto 0;
+    animation: heart 2.5s linear infinite;
+    -webkit-animation: heart 2.5s linear infinite;
+    z-index: 10;
+
+    img {
+        width: 100%;
+    }
+}
+@keyframes heart {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.8rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+@-webkit-keyframes heart {
+    from {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-0.8rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.no_mes {
+    text-align: center;
+    width: 50%;
+    height: 4rem;
+    margin: 0 auto;
+    color: $pink;
+    font-size: 1.3rem;
+    margin-top: 3rem;
+    background-color: $pink_bg;
+    animation: come 2s linear;
+    -webkit-animation: come 2s linear;
+    position: relative;
+    z-index: 20;
+    display: none;
+}
+@keyframes come {
+    from {
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(1.5);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes come {
+    from {
+        opacity: 0;
+    }
+
+    30% {
+        transform: scale(1.5);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
