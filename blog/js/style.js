@@ -1,4 +1,33 @@
-$("body").prepend("<div id='stars'></div><div id='stars2'></div><div id='stars3'></div>");
+// $("body").prepend("<div id='stars'></div><div id='stars2'></div><div id='stars3'></div>");
+bg();
+$(".goIn").click(function() {
+  $(this).fadeOut();
+  $("section").fadeIn();
+})
+var arrowClick = 0;
+
+function prev() {
+  if (arrowClick >= 0) {
+    arrowClick--;
+    if (arrowClick == -1) {
+      arrowClick = 2;
+    }
+    $("section .group").eq(arrowClick).show();
+    $("section .group").eq(arrowClick).siblings().hide();
+  }
+}
+
+function next() {
+  if (arrowClick <= $(".group").length - 1) {
+    arrowClick++;
+    if (arrowClick == $(".group").length) {
+      arrowClick = 0;
+    }
+    $("section .group").eq(arrowClick).show();
+    $("section .group").eq(arrowClick).siblings().hide();
+  }
+  console.log(arrowClick);
+}
 
 function jump(index) {
   $(".example li").eq(index).addClass("exampleLiAni");
@@ -35,43 +64,43 @@ if (document.getElementById("time")) {
 }
 
 //  opacity linear
-var div = document.getElementsByTagName("div"),
-  num = 0,
-  j = setInterval(function() {
-    if (num < div.length) {
-      div[num].style.opacity = 1;
-      num++;
-    } else {
-      clearInterval(j);
-    }
-  }, 200);
+// var div = document.getElementsByTagName("div"),
+//   num = 0,
+//   j = setInterval(function() {
+//     if (num < div.length) {
+//       div[num].style.opacity = 1;
+//       num++;
+//     } else {
+//       clearInterval(j);
+//     }
+//   }, 200);
 
 // 禁止f12 右键
-function click(e) {
-  if (document.all) {
-    if (event.button == 2 || event.button == 3) {
-      oncontextmenu = 'return false';
-      alert("你要干嘛");
-    }
-  }
-  if (document.layers) {
-    if (e.which == 3) {
-      oncontextmenu = 'return false';
-      alert("你要干嘛");
-    }
-  }
-}
-if (document.layers) {
-  document.captureEvents(Event.MOUSEDOWN);
-}
-document.onmousedown = click;
-document.oncontextmenu = new Function("return false;")
-document.onkeydown = document.onkeyup = document.onkeypress = function() {
-  if (window.event.keyCode == 123) {
-    window.event.returnValue = false;
-    return (false);
-  }
-}
+// function click(e) {
+//   if (document.all) {
+//     if (event.button == 2 || event.button == 3) {
+//       oncontextmenu = 'return false';
+//       alert("你要干嘛");
+//     }
+//   }
+//   if (document.layers) {
+//     if (e.which == 3) {
+//       oncontextmenu = 'return false';
+//       alert("你要干嘛");
+//     }
+//   }
+// }
+// if (document.layers) {
+//   document.captureEvents(Event.MOUSEDOWN);
+// }
+// document.onmousedown = click;
+// document.oncontextmenu = new Function("return false;")
+// document.onkeydown = document.onkeyup = document.onkeypress = function() {
+//   if (window.event.keyCode == 123) {
+//     window.event.returnValue = false;
+//     return (false);
+//   }
+// }
 // timu.html demo show
 // 闭包
 var right = document.getElementsByClassName("right");
@@ -124,4 +153,5 @@ $(".runBtn a").eq(0).click(function() {
 })
 $(".runBtn a").eq(1).click(function() {
   $(".runBtn span").eq(1).html("" + ffBool + "");
-})
+});
+// ///////////////////

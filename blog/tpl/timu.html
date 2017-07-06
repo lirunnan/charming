@@ -60,6 +60,32 @@
           </div>
         </div>
         <h2>数组排序</h2>
+        <h3>冒泡排序</h3>
+        <div class="content">
+          <div class="content-inner">
+            <p>var arr = [1,3,2,15,10,6,4];</p>
+            <p>var temp;</p>
+            <p>for(var i=0;i
+              < arr.length;i++){</p>
+                <div style="margin-left:2em">
+                  <p>for(var j=0;j
+                    < arr.length-i-1;j++){</p>
+                      <div style="margin-left:2.5em">
+                        <p>if(arr[ j ] > arr[ j+1 ]){</p>
+                        <div style="margin-left:3em">
+                          <p>temp = arr[ j ];</p>
+                          <p>arr[ j ] = arr[ j+1 ];</p>
+                          <p>arr[ j ] = temp</p>
+                          <p>}</p>
+                        </div>
+                        <p>}</p>
+                      </div>
+                      <p>return arr;</p>
+                      <p>}</p>
+                </div>
+          </div>
+        </div>
+        <h3>sort函数用法</h3>
         <div class="content">
           <div class="content-inner">
             <p>var brr = [1, 11, 2, 22, 33, 4, 3, 44, 5];</p>
@@ -122,33 +148,67 @@
         <p>九宫格布局这道题很多地方都有,方法也不唯一,table,float等等,在这里,小编介绍一个自以为比较方便的方法</p>
         <div class="content">
           <div class="content-inner col">
-           <p>demo展示:</p>
-           <div class="groupNinedemo">
-             <a href="javascript:;">1</a>
-             <a href="javascript:;">2</a>
-             <a href="javascript:;">3</a>
-             <a href="javascript:;">4</a>
-             <a href="javascript:;">5</a>
-             <a href="javascript:;">6</a>
-             <a href="javascript:;">7</a>
-             <a href="javascript:;">8</a>
-             <a href="javascript:;">9</a>
-           </div>
+            <p>demo展示:</p>
+            <div class="groupNinedemo">
+              <a href="javascript:;">1</a>
+              <a href="javascript:;">2</a>
+              <a href="javascript:;">3</a>
+              <a href="javascript:;">4</a>
+              <a href="javascript:;">5</a>
+              <a href="javascript:;">6</a>
+              <a href="javascript:;">7</a>
+              <a href="javascript:;">8</a>
+              <a href="javascript:;">9</a>
+            </div>
           </div>
           <div class="content-inner col">
             <p>html :</p>
-            <p>< div class="group"></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< a href="javascript:;">< /a></p>
-            <p>< /div></p>
+            <p>
+              < div class="group">
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < a href="javascript:;">
+                < /a>
+            </p>
+            <p>
+              < /div>
+            </p>
           </div>
           <div class="content-inner col">
             <p>css :</p>
@@ -160,16 +220,16 @@
             <p></p>
             <p>}</p>
             <p>.group a {</p>
-              <p>display: inline-block;</p>
-              <p>vertical-align: middle;</p>
-              <p>width:30%</p>
-              <p>height:30%</p>
-              <p>line-height: 65px;</p>
-              <p>margin-top: 2%;</p>
-              <p>text-align: center;</p>
-              <p>background-color: #aaa;</p>
-              <p>color:#000</p>
-              <p>text-decoration: none;</p>
+            <p>display: inline-block;</p>
+            <p>vertical-align: middle;</p>
+            <p>width:30%</p>
+            <p>height:30%</p>
+            <p>line-height: 65px;</p>
+            <p>margin-top: 2%;</p>
+            <p>text-align: center;</p>
+            <p>background-color: #aaa;</p>
+            <p>color:#000</p>
+            <p>text-decoration: none;</p>
             <p>}</p>
           </div>
         </div>

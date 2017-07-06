@@ -1,5 +1,6 @@
-$color: rgba(255,255,255,0.8);
-$notice: #fff;
+$color: rgba(255,255,255,0.8); // $notice: #fff;
+// $color: #0FAB87;
+$notice: #000;
 
 * {
   margin: 0;
@@ -12,12 +13,68 @@ $notice: #fff;
 }
 
 body {
-  background-position: center;
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  overflow: hidden;
+  background-color: #000;
+}
+
+img {
+  width: 100%;
+}
+
+#coverBlack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 1.0;
+  // background: radial-gradient(circle at 50%,#3F63AC,#280065);
+  // background-color: $color;
+}
+.goIn{
+  display: block;
+  width: 7em;
+  height: 1.5em;
+  border-radius: 1em;
+  text-align: center;
+  line-height: 1.5em;
+  box-shadow: 0 0 0.8em #fff;
+  transition: width 1s ease;
+  position: absolute;
+  z-index: 1000;
+  bottom: 10%;
+  transform: translate(-50%);
+  -webkit-transform:translate(-50%);
+  left: 50%;
+  color: #fff;
+  font-size: 2em;
+  font-style: italic;
+  cursor: pointer;
+  animation: show 1s ease;
+  -webkit-animation: show 1s ease;
+  display: none;
+  &:hover{
+    box-shadow: 0 0 0.8em #fff inset;
+    width: 5em;
+  }
+}
+.main {
+  // display: none;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+
+.main,
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 50;
 }
 
 div {
-  opacity: 0;
+  // opacity: 0;
   transition: opacity 0.5s ease-in;
 }
 
@@ -49,18 +106,32 @@ header {
     font-size: 1em;
     letter-spacing: 0.1em;
     top: 75%;
-    color: rgba(255,255,255,.8);
+    color: $color;
     white-space: nowrap;
   }
 }
 
 section {
   width: 80%;
+  height: 100%;
   margin: 0 auto;
   min-height: 20em;
   font-weight: bold;
+  position: relative;
+  display: none;
 
   .group {
+    display: none;
+    transition: all 1s ease;
+    animation: group 2s ease-in-out;
+    -webkit-animation: group 2s ease-in-out;
+
+    &:nth-child(1) {
+      display: block;
+    }
+  }
+
+  .inner {
     margin-top: 2em;
     padding: 2%;
     border-bottom: 0.1em solid $color;
@@ -85,11 +156,46 @@ section {
       .statement {
         margin-top: 1rem;
         font-size: 1.2rem;
-        color: #aaa;
+        color: $color;
       }
     }
   }
+
+  .arrow_group {
+    a {
+      width: 6em;
+      display: block;
+      position: absolute;
+      top: 38%;
+
+      &:nth-child(1) {
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+        left: -12%;
+        animation: arrowlft 6s linear infinite;
+        -webkit-animation: arrowlft 6s linear infinite;
+      }
+
+      &:nth-child(2) {
+        right: -12%;
+        animation: arrowrgt 6s linear infinite;
+        -webkit-animation: arrowrgt 6s linear infinite;
+      }
+    }
+
+    .lft_btn {
+      width: 5em;
+      height: 5em;
+      position: absolute;
+      top: 42%;
+      left: -12%;
+      cursor: pointer;
+      animation: arrowlft 6s linear infinite;
+      -webkit-animation: arrowlft 6s linear infinite;
+    }
+  }
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .wrap {
   color: $color;
@@ -107,11 +213,11 @@ section {
   }
 
   h2 {
-    color: #fff;
+    color: $color;
     margin-top: 1em;
 
     a {
-      color: #fff;
+      color: $color;
     }
   }
 
@@ -166,10 +272,10 @@ section {
     .content {
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px #fff inset;
+      box-shadow: 0 0 10px $color inset;
       min-height: 2rem;
       margin-top: 1rem;
-      color: #fff;
+      color: $color;
       overflow: auto;
 
       .content-inner {
@@ -206,148 +312,24 @@ section {
   position: fixed;
   right: 2rem;
   bottom: 2rem;
-  color: #fff;
+  color: $color;
   font-size: 1.1rem;
   border-radius: 0.5rem;
   // display: none;
   animation: show 1s ease;
   -webkit-animation: show 1s ease;
 }
-@keyframes show {
-  from {
-    opacity: 0;
-    transform: translate(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@-webkit-keyframes show {
-  from {
-    opacity: 0;
-    transform: translate(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-@keyframes top {
-  from {
-    top: 0;
-  }
-
-  to {
-    top: 30%;
-  }
-}
-@-webkit-keyframes top {
-  from {
-    top: 0;
-  }
-
-  to {
-    top: 30%;
-  }
-}
-@keyframes lft-rht {
-  from {
-    transform: translate(0);
-  }
-
-  25% {
-    transform: translate(-5%);
-  }
-
-  50% {
-    transform: translate(0);
-  }
-
-  75% {
-    transform: translate(5%);
-  }
-
-  to {
-    transform: translate(0);
-  }
-}
-@-webkit-keyframes lft-rht {
-  from {
-    transform: translate(0);
-  }
-
-  25% {
-    transform: translate(-5%);
-  }
-
-  50% {
-    transform: translate(0);
-  }
-
-  75% {
-    transform: translate(5%);
-  }
-
-  to {
-    transform: translate(0);
-  }
-}
-@keyframes demo1 {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes demo1 {
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-@keyframes big {
-  from {
-    transform: scale(1);
-  }
-
-  75% {
-    transform: scale(1.2);
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-@-webkit-keyframes big {
-  from {
-    transform: scale(1);
-  }
-
-  75% {
-    transform: scale(1.2);
-  }
-
-  to {
-    opacity: 0;
-  }
-}
 
 .lbl {
-  margin-top: 2em;
+  width: 80%;
+  margin: 2em auto 0;
+  display: none;
 }
 @mixin btn {
   display: inline-block;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 0 1em #fff inset;
+  color: $color;
+  box-shadow: 0 0 1em $color inset;
   border-radius: 0.5em;
 }
 
@@ -374,8 +356,8 @@ section {
   display: block;
   width: 5em;
   text-align: center;
-  color: #fff;
-  box-shadow: 0 0 1em #fff inset;
+  color: $color;
+  box-shadow: 0 0 1em $color inset;
 }
 
 .azhu {
@@ -403,7 +385,7 @@ section {
     margin-top: 2%;
     text-align: center;
     background-color: #aaa;
-    color: #000;
+    color: $color;
     text-decoration: none;
   }
 }
