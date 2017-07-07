@@ -1,9 +1,11 @@
-// $("body").prepend("<div id='stars'></div><div id='stars2'></div><div id='stars3'></div>");
 bg();
 $(".goIn").click(function() {
-  $(this).fadeOut();
-  $("section").fadeIn();
-})
+  $(".kuang").fadeIn();
+  $(".goIn").fadeOut();
+  $("#coverBlack").remove();
+  $("canvas").remove();
+  $("body").css("overflow", "auto").css("overflow-x", "hidden");
+});
 var arrowClick = 0;
 
 function prev() {
@@ -62,18 +64,6 @@ if (document.getElementById("time")) {
     }, 1000)
   }
 }
-
-//  opacity linear
-// var div = document.getElementsByTagName("div"),
-//   num = 0,
-//   j = setInterval(function() {
-//     if (num < div.length) {
-//       div[num].style.opacity = 1;
-//       num++;
-//     } else {
-//       clearInterval(j);
-//     }
-//   }, 200);
 
 // 禁止f12 右键
 // function click(e) {

@@ -485,6 +485,6 @@ function bg() {
     new demo.DemoIconsPreload();
   });
   setTimeout(function(){
-    $(".goIn").show();
-  },8000)
+    $(".goIn").fadeIn();
+  },10000)
 }

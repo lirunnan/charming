@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="blog">
 
 <head>
   <meta charset="UTF-8">
@@ -8,7 +8,7 @@
   <title>新一杂记</title>
   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/star.css">
+  <!-- <link rel="stylesheet" href="css/star.css"> -->
   <link rel="stylesheet" href="css/ani.css">
   <link rel="stylesheet" media="(max-width: 800px)" href="css/overPhone.css" />
   <script>
@@ -32,124 +32,33 @@
 <body>
   <!--  -->
   <div id="coverBlack"></div>
-  <!--  -->
   <a href="javascript:;" class="goIn">GO</a>
+  <!-- <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div> -->
   <!--  -->
-  <div class="main">
-    <header>
-      <div class="title">手札记</div>
-      <div id="time"></div>
-    </header>
-    <section>
-      <div>
-        <div class="group">
-          <div class="inner">
-            <a class="title" href="tpl/gulp.html">gulp</a>
-            <div class="example">
-              <p class="statement">
-                基于node的一种工作流程，爱不释手的工具，压缩代码，监听自动刷新，解析sass等, 将es6转化成es5进行编译
-              </p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/mobile.html">web移动端</a>
-            <div class="example">
-              <p class="statement">时下移动端开发愈演愈烈，大有渐渐取代传统pc趋势，各种app雨后春笋，层出不穷，所以是时候整理一波了</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/stickey.html">Sticky Footer(css 绝对底部)</a>
-            <div class="example">
-              <p class="statement">经常因为底部footer不能出现在下方问题困扰的队友们，进来逛逛吧</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/this.html">传奇豪侠this</a>
-            <div class="example">
-              <p class="statement">正所谓，"江湖this哥，人狠话不多"，来回忆下让人头疼的this吧</p>
-            </div>
-          </div>
-        </div>
-        <div class="group">
-          <div class="inner">
-            <a class="title" href="tpl/reg.html">正则表达式</a>
-            <div class="example">
-              <p class="statement">浅浅地整理一下js正则表达式的相关知识点</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/moban.html">js模板引擎</a>
-            <div class="example">
-              <p class="statement">针对类似移动端小型页面,循环渲染数据时,采用angualr或vue太浪费,用模板引擎取代上乘之选</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/comment.html">青梅煮一煮开源评论模块</a>
-            <div class="example">
-              <p class="statement">编写个人博客，微论坛之流时，经常需要用到一些开源的评论模块，与读者有个互动交流。 在此处，来看几个，对比一下
-              </p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/timu.html">前端经典题</a>
-            <div class="example">
-              <p class="statement">整理一下比较常见的题目,之如数组去重,冒泡排序,css布局，手写跨域等等问题做一下整理</p>
-            </div>
-          </div>
-        </div>
-        <div class="group">
-          <div class="inner">
-            <a class="title" href="tpl/kuayu.html">手写跨域</a>
-            <div class="example">
-              <p class="statement">解决手写跨域问题,受教于小编大师姐</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/jiqiao.html">js小技巧及原理分析</a>
-            <div class="example">
-              <p class="statement">一些小知识整理,让代码更简洁</p>
-            </div>
-          </div>
-          <div class="inner">
-            <a class="title" href="tpl/zuopin.html">作品小集</a>
-            <div class="example">
-              <p class="statement">整理一下往日作品，以备不时之需，o(∩∩)o...哈哈</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="arrow_group">
-        <a href="javascript:;">
-         <img src="https://fundebug.com/assets/images/landing/shishi.97d62e06.png" alt="">
-        </a>
-        <a href="javascript:;" onclick="next()">
-        <img src="https://fundebug.com/assets/images/landing/shishi.97d62e06.png" alt="">
-      </a>
-      <div class="lft_btn" onclick="prev()"></div>
-      </div>
-    </section>
-    <div class="lbl">
-      <!-- 来必力City版安装代码 -->
-      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkxMC81NDc5" class="lv">
-        <script type="text/javascript">
-          (function(d, s) {
-            var j, e = d.getElementsByTagName(s)[0];
+  <div ng-view></div>
+  <div class="lbl">
+    <!-- 来必力City版安装代码 -->
+    <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkxMC81NDc5" class="lv">
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
 
-            if (typeof LivereTower === 'function') {
-              return;
-            }
+          if (typeof LivereTower === 'function') {
+            return;
+          }
 
-            j = d.createElement(s);
-            j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-            j.async = true;
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
 
-            e.parentNode.insertBefore(j, e);
-          })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-      </div>
-      <!-- City版安装代码已完成 -->
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+      <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
     </div>
+    <!-- City版安装代码已完成 -->
   </div>
 </body>
 <script src="js/jquery-1.12.4.min.js"></script>
@@ -158,8 +67,10 @@
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
 <!-- <script src="js/bootstrap.min.js"></script> -->
-<!-- <script src="js/angular.min.js"></script> -->
+<script src="js/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 <script src="js/bg.js"></script>
 <script src="js/style.js"></script>
+<script src="js/route.js"></script>
 
 </html>

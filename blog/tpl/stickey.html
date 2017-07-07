@@ -1,100 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>新一杂记</title>
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-    <link rel="stylesheet" href="../css/style.css">
-      <link rel="stylesheet" href="../css/star.css">
-    <link rel="stylesheet" media="(max-width: 800px)" href="../css/overPhone.css" />
-</head>
-
-<body>
-    <div class="wrap">
-        <a href="https://lirunnan.github.io/charming.github.io/blog/" class="back">back</a>
-        <h1>css 绝对底部(Sticky Footer)</h1>
-        <div class="container">
-            <div class="group">
-                <h2>假设一个页面结构 : </h2>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>
-                            < div class="wrapper">
-                        </p>
-                        <p>
-                            < div class="content">页面主体内容区域
-                                < /div>
-                        </p>
-                        <p>
-                            < div class="footer">需要做到 Sticky Footer 效果的页脚
-                                < /div>
-                        </p>
-                        <p>
+<div class="wrap">
+    <a href="https://lirunnan.github.io/charming.github.io/blog/" class="back">back</a>
+    <h1>css 绝对底部(Sticky Footer)</h1>
+    <div class="container">
+        <div class="group">
+            <h2>假设一个页面结构 : </h2>
+            <div class="content">
+                <div class="content-inner">
+                    <p>
+                        < div class="wrapper">
+                    </p>
+                    <p>
+                        < div class="content">页面主体内容区域
                             < /div>
-                        </p>
-                    </div>
+                    </p>
+                    <p>
+                        < div class="footer">需要做到 Sticky Footer 效果的页脚
+                            < /div>
+                    </p>
+                    <p>
+                        < /div>
+                    </p>
                 </div>
-                <h2>方法一 : absolute 绝对定位</h2>
-                <div class="content">
-                    <div class="content-inner">
-                        <p>html,body {</p>
-                        <p>height:100%;</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>.wrapper {</p>
-                        <p>position: relative;</p>
-                        <p>min-height: 100%;</p>
-                        <p>padding-bottom: 50px;</p>
-                        <p>box-sizing: border-box;</p>
-                        <p>}</p>
-                    </div>
-                    <div class="content-inner">
-                        <p>.footer {</p>
-                        <p>position: absolute;</p>
-                        <p>bottom: 0;</p>
-                        <p>height: 50px;</p>
-                    </div>
-                    <p>需要指定html、body 100%的高度,另外就是保证content的padding-bottom的height与footer一致</p>
-                </div>
-                <h2>方法二: calc</h2>
-                <p>通过计算函数 calc 计算（视窗高度 - 页脚高度）赋予内容区最小高度，不需要任何额外样式处理，代码量最少、最简单。</p>
-                <div class="content">
-                    <div class="content-inner">
-                        .content{ min-height:calc(100vh - 50px );}
-                    </div>
-                    <div class="content-inner">
-                        .footer{ height:50px ;}
-                    </div>
-                </div>
-                <p>但是尴尬的事存在移动设备兼容性问题，不过没有几个兼容性问题那能叫前端吗，姑且留下</p>
-                <h2>方法三: Flexbox</h2>
-                <p>伸缩盒很好用，但是总觉得属于世外高人，自成一派,与江湖格格不入</p>
-                <div class="content">
-                  <div class="content-inner">
-                    html{ height: 100%; }
-                  </div>
-                  <div class="content-inner">
-                    body{ min-height: 100%; display: flex; flex-direction: colum;}
-                  </div>
-                  <div class="content-inner">
-                    .content{ flex: 1;}
-                  </div>
-                </div>
-                <p>flex写法:
-                  <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">神功</a>
-                  <a href="https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb">心法</a>
-                </p>
             </div>
+            <h2>方法一 : absolute 绝对定位</h2>
+            <div class="content">
+                <div class="content-inner">
+                    <p>html,body {</p>
+                    <p>height:100%;</p>
+                    <p>}</p>
+                </div>
+                <div class="content-inner">
+                    <p>.wrapper {</p>
+                    <p>position: relative;</p>
+                    <p>min-height: 100%;</p>
+                    <p>padding-bottom: 50px;</p>
+                    <p>box-sizing: border-box;</p>
+                    <p>}</p>
+                </div>
+                <div class="content-inner">
+                    <p>.footer {</p>
+                    <p>position: absolute;</p>
+                    <p>bottom: 0;</p>
+                    <p>height: 50px;</p>
+                </div>
+                <p>需要指定html、body 100%的高度,另外就是保证content的padding-bottom的height与footer一致</p>
+            </div>
+            <h2>方法二: calc</h2>
+            <p>通过计算函数 calc 计算（视窗高度 - 页脚高度）赋予内容区最小高度，不需要任何额外样式处理，代码量最少、最简单。</p>
+            <div class="content">
+                <div class="content-inner">
+                    .content{ min-height:calc(100vh - 50px );}
+                </div>
+                <div class="content-inner">
+                    .footer{ height:50px ;}
+                </div>
+            </div>
+            <p>但是尴尬的事存在移动设备兼容性问题，不过没有几个兼容性问题那能叫前端吗，姑且留下</p>
+            <h2>方法三: Flexbox</h2>
+            <p>伸缩盒很好用，但是总觉得属于世外高人，自成一派,与江湖格格不入</p>
+            <div class="content">
+              <div class="content-inner">
+                html{ height: 100%; }
+              </div>
+              <div class="content-inner">
+                body{ min-height: 100%; display: flex; flex-direction: colum;}
+              </div>
+              <div class="content-inner">
+                .content{ flex: 1;}
+              </div>
+            </div>
+            <p>flex写法:
+              <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">神功</a>
+              <a href="https://juejin.im/post/58e3a5a0a0bb9f0069fc16bb">心法</a>
+            </p>
         </div>
     </div>
-</body>
-<script src="../js/jquery-1.12.4.min.js"></script>
-<!-- <script src="js/bootstrap.min.js"></script> -->
-<!-- <script src="js/angular.min.js"></script> -->
-<script src="../js/style.js"></script>
-
-</html>
+</div>

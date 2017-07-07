@@ -1,153 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>新一杂记之Juicer</title>
-  <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/star.css">
-  <link rel="stylesheet" media="(max-width: 800px)" href="../css/overPhone.css" />
-</head>
-
-<body>
-  <div class="wrap">
-    <a href="https://lirunnan.github.io/charming.github.io/blog/" class="back">back</a>
-    <h1>Juicer</h1>
-    <div class="container">
-      <div class="group">
-        <p>随着移动端的渐渐兴起,"流量"、"性能"，"速度",成为关键字,模板引擎以速度快,身板小,易上手,取代传统框架渲染数据 愈演愈烈.
-          各种方法雨后春笋,络绎不绝,但大都殊途同归,大同小异,这里以Juicer为例
-        </p>
-        <h2>核心模块:</h2>
-        <h3>HTML:</h3>
-        <div class="content">
-          <div class="content-inner">
-              <p>< div id="list">< /div></p>
-              <p>< script id="tpl" type="text/template"></p>
-              <p>< ul></p>
-              <div class="txt_mid">
-              <p>{@each list as it,index}</p>
-              <p style="margin-left:4rem;">< li>${it.name} (index: ${index})< /li></p>
-              <p>{@/each}</p>
-              <p>{@each blah as it}</p>
-              <p>< li></p>
-              <p>num: ${it.num} < br/></p>
-              <div style="margin-left:3.5rem;">
-              <p>{@if it.num==3}</p>
-              <p>{@each it.inner as it2}</p>
-              <p style="margin-left:4rem;">${it2.time} < br/></p>
-              <p>{@/each}</p>
-              <p>{@/if}</p>
-            </div>
-              <p>< /li></p>
-              <p>{@/each}</p>
-              </div>
-              <p>< /ul></p>
-              <p>< /script></p>
-          </div>
-        </div>
-        <h3>Javascript 代码:</h3>
-        <div class="content">
-          <div class="content-inner">
-            <p>var data = {</p>
-              <div class="txt_mid">
-                <p>list : [</p>
-                <div style="margin-left:3.5rem">
-                  <p>{name:'aaaa',show:true}</p>
-                  <p>{name:'bbbb',show:false}</p>
-                  <p>{name:'aaaa',show:true}</p>
-                </div>
-                <p>],</p>
-                <p>blash : [</p>
-                <div style="margin-left:3.5rem">
-                  <p>{num:1}</p>
-                  <p>{num:2}</p>
-                  <p>{num:3,inner:[</p>
-                    <div style="margin-left:3.8rem">
-                      <p>{'time':'15:00'}</p>
-                        <p>{'time':'16:00'}</p>
-                          <p>{'time':'17:00'}</p>
-                            <p>{'time':'18:00'}</p>
-                    </div>
-                    <p>]},</p>
-                    <p>{num:4}</p>
-                </div>
-                <p>]</p>
-              </div>
-              <p>};</p>
-              <p>var tpl = document.getElementById('tpl').innerHTML;</p>
-              <p>var html = juicer(tpl,data);</p>
-              <p>list.innerHTML = data;</p>
-          </div>
-        </div>
-        <h2>语法</h2>
-        <h3>${变量}</h3>
-        <div class="content">
-          <div class="content-inner">
-            <p>${name}</p>
-            <p>${name|function}</p>
-            <p>${name|function,arg1,arg2}</p>
-          </div>
-        </div>
-        <h3>内联辅助函数 {@helper} … {@/helper}</h3>
-        <h3>循环遍历{@each} … {@/each}</h3>
-        <div class="content">
-          <div class="content-inner">
-            <p>{@each list as item, index}</p>
+<div class="wrap">
+  <a href="https://lirunnan.github.io/charming.github.io/blog/" class="back">back</a>
+  <h1>Juicer</h1>
+  <div class="container">
+    <div class="group">
+      <p>随着移动端的渐渐兴起,"流量"、"性能"，"速度",成为关键字,模板引擎以速度快,身板小,易上手,取代传统框架渲染数据 愈演愈烈.
+        各种方法雨后春笋,络绎不绝,但大都殊途同归,大同小异,这里以Juicer为例
+      </p>
+      <h2>核心模块:</h2>
+      <h3>HTML:</h3>
+      <div class="content">
+        <div class="content-inner">
+            <p>< div id="list">< /div></p>
+            <p>< script id="tpl" type="text/template"></p>
+            <p>< ul></p>
             <div class="txt_mid">
-              <p>${item.prop}</p>
-              <p>${index} <span>// 当前索引</span></p>
-            </div>
+            <p>{@each list as it,index}</p>
+            <p style="margin-left:4rem;">< li>${it.name} (index: ${index})< /li></p>
             <p>{@/each}</p>
-          </div>
-        </div>
-        <h3>判断 {@if} … {@else if} … {@else} … {@/if}</h3>
-        <div class="content">
-          <div class="content-inner">
-            <p>{@each list as item, index}</p>
-            <p>{@if index===3}</p>
-            <div class="txt_mid">
-              <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
-              <p>{@else if index===4}</p>
-              <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
-              <p>{@else}</p>
-              <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
-            </div>
-            {@/if}
+            <p>{@each blah as it}</p>
+            <p>< li></p>
+            <p>num: ${it.num} < br/></p>
+            <div style="margin-left:3.5rem;">
+            <p>{@if it.num==3}</p>
+            <p>{@each it.inner as it2}</p>
+            <p style="margin-left:4rem;">${it2.time} < br/></p>
             <p>{@/each}</p>
+            <p>{@/if}</p>
           </div>
-        </div>
-        <h3>注释</h3>
-        <div class="content">
-          <div class="content-inner">
-            {# 这里是注释内容}
-          </div>
-        </div>
-        <h3>辅助循环</h3>
-        <div class="content">
-          <div class="content-inner">
-            <p>{@each i in range(5, 10)}</p>
-            <div class="txt_mid">
-              <p>${i} <span>// 输出5;6;7;8;9;</span></p>
-            </div>
+            <p>< /li></p>
             <p>{@/each}</p>
-          </div>
+            </div>
+            <p>< /ul></p>
+            <p>< /script></p>
         </div>
-        <h3>子模板嵌套</h3>
-        <h3>....</h3>
-        <h3>语法详见:
-          <a href="https://github.com/GodRogers/Juicer">https://github.com/GodRogers/Juicer</a>
-        </h3>
       </div>
+      <h3>Javascript 代码:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>var data = {</p>
+            <div class="txt_mid">
+              <p>list : [</p>
+              <div style="margin-left:3.5rem">
+                <p>{name:'aaaa',show:true}</p>
+                <p>{name:'bbbb',show:false}</p>
+                <p>{name:'aaaa',show:true}</p>
+              </div>
+              <p>],</p>
+              <p>blash : [</p>
+              <div style="margin-left:3.5rem">
+                <p>{num:1}</p>
+                <p>{num:2}</p>
+                <p>{num:3,inner:[</p>
+                  <div style="margin-left:3.8rem">
+                    <p>{'time':'15:00'}</p>
+                      <p>{'time':'16:00'}</p>
+                        <p>{'time':'17:00'}</p>
+                          <p>{'time':'18:00'}</p>
+                  </div>
+                  <p>]},</p>
+                  <p>{num:4}</p>
+              </div>
+              <p>]</p>
+            </div>
+            <p>};</p>
+            <p>var tpl = document.getElementById('tpl').innerHTML;</p>
+            <p>var html = juicer(tpl,data);</p>
+            <p>list.innerHTML = data;</p>
+        </div>
+      </div>
+      <h2>语法</h2>
+      <h3>${变量}</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>${name}</p>
+          <p>${name|function}</p>
+          <p>${name|function,arg1,arg2}</p>
+        </div>
+      </div>
+      <h3>内联辅助函数 {@helper} … {@/helper}</h3>
+      <h3>循环遍历{@each} … {@/each}</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>{@each list as item, index}</p>
+          <div class="txt_mid">
+            <p>${item.prop}</p>
+            <p>${index} <span>// 当前索引</span></p>
+          </div>
+          <p>{@/each}</p>
+        </div>
+      </div>
+      <h3>判断 {@if} … {@else if} … {@else} … {@/if}</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>{@each list as item, index}</p>
+          <p>{@if index===3}</p>
+          <div class="txt_mid">
+            <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
+            <p>{@else if index===4}</p>
+            <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
+            <p>{@else}</p>
+            <p style="margin-left:3.5rem">the index is 3, the value is ${item.prop}</p>
+          </div>
+          {@/if}
+          <p>{@/each}</p>
+        </div>
+      </div>
+      <h3>注释</h3>
+      <div class="content">
+        <div class="content-inner">
+          {# 这里是注释内容}
+        </div>
+      </div>
+      <h3>辅助循环</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>{@each i in range(5, 10)}</p>
+          <div class="txt_mid">
+            <p>${i} <span>// 输出5;6;7;8;9;</span></p>
+          </div>
+          <p>{@/each}</p>
+        </div>
+      </div>
+      <h3>子模板嵌套</h3>
+      <h3>....</h3>
+      <h3>语法详见:
+        <a href="https://github.com/GodRogers/Juicer">https://github.com/GodRogers/Juicer</a>
+      </h3>
     </div>
   </div>
-</body>
-<script src="../js/jquery-1.12.4.min.js"></script>
-<!-- <script src="js/bootstrap.min.js"></script> -->
-<!-- <script src="js/angular.min.js"></script> -->
-<script src="../js/style.js"></script>
-
-</html>
+</div>
