@@ -62,9 +62,6 @@ app.controller("homeCtrl", function() {
       }, 1000)
     }
   }
-  setTimeout(function() {
-    $(".lbl").show();
-  }, 11000)
 });
 app.controller("timuCtrl", function() {
   // timu.html demo show
