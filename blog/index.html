@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>新一杂记</title>
+  <meta name="description" content="个性一点的知识点整理" />
+  <link rel="stylesheet" href="css/share.css">
   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="css/style.css">
   <!-- <link rel="stylesheet" href="css/star.css"> -->
@@ -31,13 +33,21 @@
 
 <body>
   <!--  -->
-  <div id="coverBlack"></div>
+  <div id="coverBlack">
+    稍等一会...
+  </div>
   <a href="javascript:;" class="goIn">GO</a>
   <!-- <div id='stars'></div>
   <div id='stars2'></div>
   <div id='stars3'></div> -->
   <!--  -->
   <div ng-view></div>
+  <div class="sns-share">
+    <a href="javascript:;" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
+    <a href="javascript:;" class="qq"><i class="icon iconfont icon-qq"></i></a>
+    <a href="javascript:;" class="weibo"><i class="icon iconfont icon-weibo"></i></a>
+    <a href="javascript:;" class="wechat"><i class="icon iconfont icon-wechat"></i></a>
+  </div>
   <div class="lbl">
     <!-- 来必力City版安装代码 -->
     <div id="lv-container" data-id="city" data-uid="MTAyMC8yODkxMC81NDc5" class="lv">
@@ -61,16 +71,30 @@
     <!-- City版安装代码已完成 -->
   </div>
 </body>
-<script src="js/jquery-1.12.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/86/three.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
 <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
 <!-- <script src="js/bootstrap.min.js"></script> -->
 <script src="js/angular.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="js/route.js"></script>
 <script src="js/bg.js"></script>
 <script src="js/style.js"></script>
-<script src="js/route.js"></script>
+<script src="js/jquery.qrcode.min.js"></script>
+<script src="js/share.js"></script>
+<script>
+var $config = {
+  url: 'https://lirunnan.github.io/charming/blog/', // 网址，默认使用 window.location.href
+  // site: '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+  // title: '', // 标题，默认读取 document.title
+  // description: '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+  image: 'https://lirunnan.github.io/charming/blog/img/22.png', // 图片, 默认取网页中第一个img标签
+  target: '_blank' //打开方式
+};
+$('.sns-share').share($config);
+</script>
+
 
 </html>

@@ -3,6 +3,7 @@ app.config(function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'tpl/home.html',
+      controller: 'homeCtrl'
     })
     .when('/gulp', {
       templateUrl: 'tpl/gulp.html',
@@ -12,6 +13,7 @@ app.config(function($routeProvider) {
     })
     .when('/jiqiao', {
       templateUrl: 'tpl/jiqiao.html',
+      controller: 'jiqiaoCtrl'
     })
     .when('/comment', {
       templateUrl: 'tpl/comment.html',
@@ -30,6 +32,7 @@ app.config(function($routeProvider) {
     })
     .when('/timu', {
       templateUrl: 'tpl/timu.html',
+      controller: 'timuCtrl'
     })
     .when('/reg', {
       templateUrl: 'tpl/reg.html',

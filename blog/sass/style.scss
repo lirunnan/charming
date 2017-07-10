@@ -2,7 +2,7 @@
 // $notice: #fff;
 $color: #fff;
 $notice: #000;
-$box:#fff;
+$box: #fff;
 
 * {
   margin: 0;
@@ -16,7 +16,7 @@ $box:#fff;
 
 body {
   overflow: hidden;
-  background-image: url("../img/22.jpg");
+  background-image: url("../img/22.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -35,14 +35,22 @@ img {
   width: 100%;
   height: 100%;
   opacity: 1.0;
+  color: #fff;
+  font-size: 2em;
+  font-style: italic;
+  text-align: center;
+  line-height: 20em;
+  font-weight: bold;
   background-color: #000;
 }
-canvas{
+
+canvas {
   position: absolute;
   z-index: 10;
   left: 0;
-  top:0;
+  top: 0;
 }
+
 .goIn {
   display: block;
   position: absolute;
@@ -121,8 +129,8 @@ section {
   .group {
     display: none;
     transition: all 1s ease;
-    animation: group 2s ease-in-out;
-    -webkit-animation: group 2s ease-in-out;
+    animation: group 1.5s ease-in-out;
+    -webkit-animation: group 1.5s ease-in-out;
 
     &:nth-child(1) {
       display: block;
@@ -238,6 +246,10 @@ section {
     .group {
       margin-top: 2rem;
 
+      a {
+        color: #0FB60B;
+      }
+
       ul {
         margin-top: 1em;
 
@@ -324,7 +336,7 @@ section {
 .lbl {
   width: 80%;
   margin: 2em auto 0;
-  // display: none;
+  display: none;
 }
 @mixin btn {
   display: inline-block;
@@ -411,4 +423,10 @@ section {
     display: inline-block;
     margin-left: 5%;
   }
+}
+.sns-share{
+  position: fixed;
+  left: 0;
+  bottom: 5%;
+  width: 30%;
 }
