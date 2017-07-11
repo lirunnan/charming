@@ -26,6 +26,59 @@ img {
   width: 100%;
 }
 
+#money {
+  display: block;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  width: 3em;
+  height: 3em;
+  z-index: 180;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 3em;
+  color: #fff;
+  box-shadow: 0 0 1em #fff inset;
+  animation: come 1s ease;
+  -webkit-animation: come 1s ease;
+}
+
+.dashang {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+  display: none;
+  background-color: rgba(0,0,0,0.8);
+
+  a,
+  img {
+    display: block;
+    position: absolute;
+    width: 15em;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+  }
+
+  a {
+    color: #fff;
+    width: 10em;
+    height: 2em;
+    box-shadow: 0 0 1em #fff;
+    font-weight: bold;
+    border-radius: 1em;
+    top:13%;
+    line-height: 2em;
+    text-align: center;
+    background-color: #22AA39;
+
+  }
+}
+
 .main {
   transform-style: preserve-3d;
   perspective: 800px;
@@ -376,7 +429,8 @@ section {
     margin-left: 5%;
   }
 }
-.sns-share{
+
+.sns-share {
   position: fixed;
   left: 0;
   bottom: 5%;

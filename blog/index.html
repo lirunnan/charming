@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>新一杂记</title>
-  <meta name="description" content="个性一点的知识点整理" />
+  <meta name="description" content="生命不息，折腾不止" />
   <link rel="stylesheet" href="css/share.css">
   <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
   <link rel="stylesheet" href="css/style.css">
@@ -32,6 +32,11 @@
 </head>
 
 <body>
+  <a href="javascript:;" id="money">打赏</a>
+  <div class="dashang">
+    <img src="img/dashang.jpg" alt="">
+    <a href="javascript:;">谢谢土豪</a>
+  </div>
   <div ng-view></div>
   <div class="sns-share">
     <a href="javascript:;" class="qzone"><i class="icon iconfont icon-qzone"></i></a>
@@ -71,15 +76,15 @@
 <script src="js/jquery.qrcode.min.js"></script>
 <script src="js/share.js"></script>
 <script>
-var $config = {
-  url: 'https://lirunnan.github.io/charming/blog/', // 网址，默认使用 window.location.href
-  // site: '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
-  // title: '', // 标题，默认读取 document.title
-  // description: '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
-  image: 'https://lirunnan.github.io/charming/blog/img/22.png', // 图片, 默认取网页中第一个img标签
-  target: '_blank' //打开方式
-};
-$('.sns-share').share($config);
+  var $config = {
+    url: 'https://lirunnan.github.io/charming/blog/', // 网址，默认使用 window.location.href
+    // site: '', // 来源（QQ空间会用到）, 默认读取head标签：<meta name="site" content="http://overtrue" />
+    // title: '', // 标题，默认读取 document.title
+    // description: '', // 描述, 默认读取head标签：<meta name="description" content="PHP弱类型的实现原理分析" />
+    image: 'https://lirunnan.github.io/charming/blog/img/22.png', // 图片, 默认取网页中第一个img标签
+    target: '_blank' //打开方式
+  };
+  $('.sns-share').share($config);
 </script>
 
 

@@ -10,7 +10,12 @@ function prev() {
     $("section .group").eq(arrowClick).siblings().hide();
   }
 }
-
+$("#money").click(function(){
+  $(".dashang").fadeIn();
+})
+$(".dashang a").click(function(){
+  $(".dashang").fadeOut();
+})
 function next() {
   if (arrowClick <= $(".group").length - 1) {
     arrowClick++;
