@@ -1,7 +1,7 @@
 // $color: rgba(255,255,255,0.8);
 // $notice: #fff;
 $color: #fff;
-$notice: #000;
+$notice: #22AA39;
 $box: #fff;
 
 * {
@@ -71,11 +71,10 @@ img {
     box-shadow: 0 0 1em #fff;
     font-weight: bold;
     border-radius: 1em;
-    top:13%;
+    top: 13%;
     line-height: 2em;
     text-align: center;
     background-color: #22AA39;
-
   }
 }
 
@@ -341,7 +340,7 @@ section {
 .lbl {
   width: 80%;
   margin: 2em auto 0;
-  background-color: rgba(255,255,255,0.1);
+  background-color: #eee;
 }
 @mixin btn {
   display: inline-block;
