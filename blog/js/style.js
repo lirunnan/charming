@@ -48,8 +48,11 @@ function jump(index) {
 function popClose() {
   $(".example_pop").hide();
 }
+$("#money").click(function(){
+  ga('send', 'event', 'money', '打赏');
+})
 app.controller("homeCtrl", function() {
-  
+
 });
 app.controller("timuCtrl", function() {
   // timu.html demo show
