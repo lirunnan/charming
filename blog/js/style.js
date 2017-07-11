@@ -1,11 +1,3 @@
-bg();
-$(".goIn").click(function() {
-  $(".kuang").fadeIn();
-  $(".goIn").fadeOut();
-  $("#coverBlack").remove();
-  $("canvas").remove();
-  $("body").css("overflow", "auto").css("overflow-x", "hidden");
-});
 var arrowClick = 0;
 
 function prev() {

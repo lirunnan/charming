@@ -15,7 +15,6 @@ $box: #fff;
 }
 
 body {
-  overflow: hidden;
   background-image: url("../img/22.png");
   background-position: center;
   background-size: cover;
@@ -25,59 +24,6 @@ body {
 
 img {
   width: 100%;
-}
-
-#coverBlack {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  opacity: 1.0;
-  color: #fff;
-  font-size: 2em;
-  font-style: italic;
-  text-align: center;
-  line-height: 20em;
-  font-weight: bold;
-  background-color: #000;
-}
-
-canvas {
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  top: 0;
-}
-
-.goIn {
-  display: block;
-  position: absolute;
-  width: 7em;
-  height: 1.5em;
-  line-height: 1.5em;
-  text-align: center;
-  color: #fff;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 2em;
-  border-radius: 1em;
-  box-shadow: 0 0 1em #fff;
-  bottom: 10%;
-  left: 50%;
-  z-index: 50;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  transition: width 1s ease;
-  -webkit-transtion: width 1s ease;
-  display: none;
-  cursor: pointer;
-
-  &:hover {
-    box-shadow: 0 0 1em #ff inset;
-    width: 5em;
-  }
 }
 
 .main {
@@ -169,21 +115,27 @@ section {
 
   .arrow_group {
     a {
-      width: 6em;
       display: block;
-      position: absolute;
-      top: 38%;
+      width: 3em;
+      height: 3em;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+      line-height: 3em;
+      box-shadow: 0 0 1em #fff inset;
+      position: fixed;
+      z-index: 100;
+      top: 52%;
 
       &:nth-child(1) {
-        transform: rotateY(180deg);
-        -webkit-transform: rotateY(180deg);
-        left: -12%;
+        left: 2%;
         animation: arrowlft 6s linear infinite;
         -webkit-animation: arrowlft 6s linear infinite;
       }
 
       &:nth-child(2) {
-        right: -12%;
+        right: 2%;
         animation: arrowrgt 6s linear infinite;
         -webkit-animation: arrowrgt 6s linear infinite;
       }
@@ -336,7 +288,7 @@ section {
 .lbl {
   width: 80%;
   margin: 2em auto 0;
-  // display: none;
+  background-color: rgba(255,255,255,0.1);
 }
 @mixin btn {
   display: inline-block;

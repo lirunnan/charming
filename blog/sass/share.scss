@@ -49,7 +49,9 @@
 
 .sns-share-component a .wechat-qrcode {
   position:absolute;
+  width: 110px;
   bottom: 40px;
+  left: 3em;
   visibility: hidden;
   -webkit-transform: translate(0, 10px);
   -ms-transform: translate(0, 10px);
