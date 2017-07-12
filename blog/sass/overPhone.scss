@@ -10,9 +10,19 @@ section {
     padding: 5%;
 
     .title {
-      font-size: 1.5em;
+      font-size: 1.3em;
+    }
+
+    .statement {
+      font-size: 0.9em !important;
     }
   }
+}
+.lightDesire{
+  display: none;
+}
+.wrap {
+  width: 100%;
 }
 
 .lbl {

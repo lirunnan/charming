@@ -1,3 +1,11 @@
+// liuxing
+setInterval(function() {
+  $(".lightDesire").addClass("liuxing");
+  setTimeout(function() {
+    $(".lightDesire").removeClass("liuxing");
+  }, 5000)
+}, 6000)
+//  main
 var arrowClick = 0;
 
 function prev() {
@@ -48,7 +56,7 @@ function jump(index) {
 function popClose() {
   $(".example_pop").hide();
 }
-$("#money").click(function(){
+$("#money").click(function() {
   ga('send', 'event', 'money', '打赏');
 })
 app.controller("homeCtrl", function() {

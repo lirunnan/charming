@@ -172,3 +172,25 @@
   from{transform: scale(0);}
   to{transform: scale(1);}
 }
+@keyframes liuxing {
+  from {
+    top: -10%;
+    left: -10%;
+  }
+
+  to {
+    top: 50%;
+    left: 200%;
+  }
+}
+@-webkit-keyframes liuxing {
+  from {
+    top: -10%;
+    left: -10%;
+  }
+
+  to {
+    top: 60%;
+    left: 200%;
+  }
+}

@@ -20,6 +20,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  overflow-x: hidden;
+  cursor: url("https://lirunnan.github.io/charming/blog/img/huo.ico"),auto;
 }
 
 img {
@@ -42,7 +44,6 @@ img {
   animation: come 1s ease;
   -webkit-animation: come 1s ease;
 }
-
 .dashang {
   position: fixed;
   left: 0;
@@ -179,6 +180,7 @@ section {
       position: fixed;
       z-index: 100;
       top: 52%;
+      z-index: 100;
 
       &:nth-child(1) {
         left: 2%;
@@ -432,12 +434,12 @@ section {
 .toggle {
   width: 80%;
   text-align: center;
-  margin: 2em auto 0;
+  margin: 2em auto 4em;
 
   a {
     width: 3em;
-    height: 1em;
-    line-height: 1em;
+    height: 1.2em;
+    line-height: 1.2em;
     box-shadow: 0 0 1em #fff inset;
     border-radius: 1em;
     text-align: center;
@@ -453,4 +455,15 @@ section {
   bottom: 5%;
   width: 80%;
   z-index: 100;
+}
+.lightDesire {
+  width: 1em;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: 500;
+}
+.liuxing {
+  animation: liuxing 5s ease-in;
+  -webkit-animation: liuxing 5s ease-in;
 }
