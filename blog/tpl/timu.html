@@ -4,6 +4,7 @@
   <div class="container">
     <div class="group">
       <h2>问题: 创建10 个a 点击的时候弹出来对应的序号 (这题它是主要考察闭包的);</h2>
+      <h3>ES5:</h3>
       <div class="content">
         <div class="content-inner">
           <p>var a = document.getElementsByTagName("a");</p>
@@ -24,6 +25,17 @@
           <a href="javascript:;">3</a>
           <a href="javascript:;">4</a>
           <a href="javascript:;">5</a>
+        </div>
+      </div>
+      <h3>ES6:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>for(let i=0;i
+            < a.length;i++){</p>
+              <p>a[i].onclick = function(){</p>
+              <p>console.log(i);</p>
+              <p>}</p>
+              <p>}</p>
         </div>
       </div>
       <h2>数组去重</h2>
