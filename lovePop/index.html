@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/lovePop.css">
+  <title>Document</title>
+  <script>
+    function setRemFontSize(baseSize, baseWidth) {
+      var baseSize = baseSize || 13,
+        baseWidth = baseWidth || 375,
+        clientWidth = document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+    }
+    setRemFontSize();
+    window.addEventListener("resize", function() {
+      setRemFontSize();
+    });
+  </script>
+</head>
+
+<body>
+  <a href="javascript:;" id="phoneVoice">20撩币/分</a>
+  <div class="pop">
+    <div class="pop-inner">
+      <a href="javascript:;" class="close"><img src="img/guanbianniu@2x.png" alt=""></a>
+      <div class="pop_title">
+        短信验证
+      </div>
+      <form>
+        <div class="main">
+          <div class="phoneNum"><input type="tel" placeholder="输入你的手机号"></div>
+          <div class="checkNum">
+            <input type="text" placeholder="输入验证码">
+            <input type="button" value="接受验证码" id="getCheckNum">
+          </div>
+        </div>
+        <div class="confim"><input type="button" value="确认" id="confimBtn"></div>
+      </form>
+      <!--  -->
+      <div class="error">验证码有误</div>
+    </div>
+    <div class="success">
+      <a href="javascript:;" class="close"><img src="img/guanbianniu@2x.png" alt=""></a>
+      <div class="txt">
+        <p>电话接通中...</p>
+        <p>请注意接听回拨电话</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/lovePop.js"></script>
+
+</html>

@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+  font-family: Helvetica,Arial,sans-serif;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: rgb(252, 252, 252);
+}
+@mixin inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+// .header {
+//   border-bottom: 0.09rem solid #e5e5e5;
+//
+//   .col {
+//     @include inline-block;
+//     margin-top: 0.8rem;
+//     margin-bottom: 0.5rem;
+//
+//     div {
+//       margin-left: 0.6rem;
+//     }
+//
+//     &:nth-child(1) {
+//       width: 3.2rem;
+//       height: 3.2rem;
+//       margin-left: 1rem;
+//     }
+//
+//     &:nth-child(3) {
+//       width: 6rem;
+//       height: 2.5rem;
+//       text-align: center;
+//       line-height: 2.5rem;
+//       font-size: 1.2rem;
+//       color: #16b998;
+//       border: 1px solid currentColor;
+//       border-radius: 0.5rem;
+//       margin-left: 12rem;
+//     }
+//   }
+// }
+
+.user {
+  .avatar {
+    width: 12.3rem;
+    height: 12.3rem;
+    margin: 2rem auto 0;
+    text-align: center;
+    background-image: url("../images/avatar_decorate.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    img {
+      display: inline-block;
+      width: 6.15rem;
+      height: 6.15rem;
+      margin-top: 3rem;
+      border-radius: 50%;
+    }
+  }
+
+  .des,
+  .mes {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  .des {
+    font-size: 1.23rem;
+    color: #4d4d4d;
+  }
+
+  .mes {
+    span {
+      display: inline-block;
+      color: grey;
+
+      &:nth-child(2) {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.info_title {
+  border-left: 4px solid #16b998;
+  padding-left: 0.5rem;
+  color: #aeaeae;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.info_group {
+  margin: 2rem auto;
+  width: 90%;
+
+  .info {
+    margin-top: 2rem;
+
+    .info_content {
+      font-size: 1rem;
+      color: #7a7a7a;
+      margin-top: 0.8rem;
+
+      ul {
+        li {
+          display: inline-block;
+          width: 2.53rem;
+          height: 2.53rem;
+          border-radius: 50%;
+          vertical-align: middle;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      .info_title {
+        color: #fa5718;
+      }
+    }
+  }
+}
+
+.list {
+  background-color: #eee;
+
+  .list_info {
+    margin-top: 0.5rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    background-color: #fcfcfc;
+  }
+
+  .list-inner {
+    width: 90%;
+    margin: 0.9rem auto 1.1rem;
+    color: #333;
+
+    .list_title {
+      .col {
+        @include inline-block;
+
+        &:nth-child(1) {
+          width: 3.07rem;
+          height: 3.07rem;
+        }
+
+        &:nth-child(2) {
+          margin-left: 0.8rem;
+
+          div {
+            &:nth-child(1) {
+              font-size: 1.13rem;
+            }
+
+            &:nth-child(2) {
+              color: #aeaeae;
+              font-size: 0.9rem;
+              margin-top: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .list_txt {
+      font-size: 1.13rem;
+      margin-top: 1rem;
+    }
+
+    .list_img {
+      margin-top: 0.5rem;
+
+      img {
+        display: inline-block;
+        width: 48%;
+        vertical-align: top;
+      }
+    }
+
+    .comment {
+      margin-top: 1.2rem;
+
+      .col {
+        @include inline-block;
+
+        span {
+          display: inline-block;
+          font-size: 1.2rem;
+          color: #aeaeae;
+
+          &:nth-child(2) {
+            margin-left: 1rem;
+          }
+
+          img {
+            vertical-align: top;
+            width: 1.3rem;
+          }
+
+          .txt {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.add {
+  text-align: center;
+  color: #aeaeae;
+  margin-top: 1rem;
+  margin-bottom: 5rem;
+  font-size: 0.9rem;
+}
+
+.login {
+  display: block;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  background-color: #16b998;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  font-size: 1.38rem;
+}

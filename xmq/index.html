@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title></title>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    function setRemFontSize(baseSize, baseWidth) {
+      var baseSize = baseSize || 13,
+        baseWidth = baseWidth || 320,
+        clientWidth = document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+    }
+    setRemFontSize();
+    window.addEventListener("resize", function() {
+      setRemFontSize();
+    });
+  </script>
+</head>
+
+<body>
+  <!-- <div class="header">
+    <div class="col"><img src="images/topic01.png" alt=""></div>
+    <div class="col">
+      <div>寻爱圈子</div>
+      <div>......</div>
+    </div>
+    <a href="javascript:;" class="col">下载app</a>
+  </div> -->
+  <!--  -->
+  <div class="user">
+    <div class="avatar">
+      <img src="images/user.jpg" alt="">
+    </div>
+    <div class="des">寻爱圈子</div>
+    <div class="mes">
+      <span>主题数: 43800481</span>
+      <span>Feng 创建575天</span>
+    </div>
+  </div>
+  <div class="info_group">
+    <div class="info">
+      <div class="info_title">圈子简介</div>
+      <div class="info_content">
+        <p>交友圈子,禁止发裸露图,禁止出现皮条行为!</p>
+        <p>女生免费加入圈加微信Lilyssmm,男生付费入圈。看到心仪的对象可找圈住咨询!</p>
+      </div>
+    </div>
+    <div class="info">
+      <div class="info_title">他们也在(已有13000+人)</div>
+      <div class="info_content">
+        <ul>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/1458151091991182.jpg" alt=""></li>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/147550653337229.jpg" alt=""></li>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/1448447615130294.jpg" alt=""></li>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/1448447614203217.jpg" alt=""></li>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/1448447615139296.jpg" alt=""></li>
+          <li><img src="https://file.xiaomiquan.com/user_avatar/1448447615143297.jpg" alt=""></li>
+          <li><img src="images/circle01.png" alt=""></li>
+        </ul>
+      </div>
+    </div>
+    <div class="info">
+      <div class="info_title">加入圈子:￥256/永久</div>
+    </div>
+    <div class="info">
+      <div class="info_title">主题预览</div>
+    </div>
+  </div>
+  <div class="list"></div>
+  <script id="tpl" type="text/template">
+    {@each rank_list as it,index}
+    <div class="list_info">
+      <div class="list-inner">
+        <div class="list_title">
+          <div class="col">
+            <img src="${it.avatar}" alt="">
+          </div>
+          <div class="col">
+            <div>${it.nickname}</div>
+            <div>${it.time}</div>
+          </div>
+        </div>
+        <div class="list_txt">
+          ${it.content}
+        </div>
+        <div class="list_img">
+          <img src="${it.contImg}" alt="">
+        </div>
+      </div>
+    </div>
+    {@/each}
+  </script>
+  <div class="add">加入圈子可以查看更多内容</div>
+  <a href="javascript:;" class="login">微信登录后加入</a>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/juicer-min.js"></script>
+<script src="js/style.js"></script>
+
+</html>

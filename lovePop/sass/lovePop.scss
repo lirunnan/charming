@@ -1,0 +1,234 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0)!important;
+  font-family: "PingFangSC-Regular",arial,sans-serif;
+}
+
+body {
+  background-color: #282828;
+}
+
+img {
+  width: 100%;
+}
+
+#phoneVoice {
+  display: block;
+  position: fixed;
+  bottom: 1.54rem;
+  right: 0.54rem;
+  background-image: url("../img/yuyintonghua.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  border-radius: 50%;
+  width: 6.46rem;
+  height: 6.46rem;
+  text-align: center;
+  color: #fff;
+  line-height: 7.6rem;
+  font-size: 0.85rem;
+  animation: jump 1.5s linear infinite;
+  -webkit-animation: jump 1.5s linear infinite;
+}
+@keyframes jump {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes jump {
+  from {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.pop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,.55);
+  z-index: 100;
+  display: none;
+  animation: show 1s ease;
+  -webkit-animation: show 1s ease;
+
+  .pop-inner {
+    background-color: #fff;
+    width: 77.1%;
+    min-height: 15rem;
+    margin: 45.4% auto 0;
+    border-radius: 0.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+    animation: show 1s ease;
+    -webkit-animation: show 1s ease;
+
+    a {
+      position: absolute;
+      width: 2.3rem;
+      height: 2.3rem;
+      top: -0.6rem;
+      right: -0.6rem;
+    }
+
+    .pop_title {
+      height: 3.5rem;
+      width: 100%;
+      background-color: #EBB782;
+      font-size: 1.35rem;
+      color: #fff;
+      text-align: center;
+      line-height: 3.5rem;
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem;
+    }
+
+    form {
+      width: 80%;
+      margin: 0 auto;
+
+      input {
+        height: 3rem;
+        outline: medium;
+        width: 100%;
+        -webkit-appearance: none;
+        border: 0.1rem solid #D5D5D5;
+        display: inline-block;
+
+        &::-webkit-input-placeholder {
+          font-size: 1.1rem;
+        }
+      }
+
+      .phoneNum {
+        margin-top: 1rem;
+
+        input {
+          padding-left: 5%;
+          width: 95%;
+        }
+      }
+
+      .checkNum {
+        margin-top: 1rem;
+
+        input {
+          width: 45%;
+
+          &:nth-child(1) {
+            padding-left: 5%;
+          }
+
+          &:nth-child(2) {
+            float: right;
+            background-color: #A4A4A4;
+            color: #fff;
+            font-size: 1.1rem;
+            border-color: #A4A4A4;
+          }
+        }
+      }
+
+      .confim {
+        width: 50%;
+        margin: 1rem auto 0;
+        background-color: #A4A4A4;
+        box-shadow: 0 0.3rem 0.1rem #787878;
+        border-radius: 0.5rem;
+        border-color: #A4A4A4;
+
+        input {
+          border-color: #A4A4A4;
+          color: #fff;
+          font-size: 1.1rem;
+        }
+      }
+    }
+
+    .error {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      -webkit-transform: translate(-50%);
+      background-color: rgba(0,0,0,0.6);
+      width: 45%;
+      height: 4rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      text-align: center;
+      line-height: 4rem;
+      font-size: 1.2rem;
+      top: 50%;
+      display: none;
+      animation: show 1s ease;
+      -webkit-animation: show 1s ease;
+    }
+  }
+
+  .success {
+    background-color: #fff;
+    width: 77.1%;
+    height: 9rem;
+    padding-top: 4rem;
+    margin: 50.4% auto 0;
+    border-radius: 0.5rem;
+    position: relative;
+    display: none;
+    animation: show 1s ease;
+    -webkit-animation: show 1s ease;
+
+    a {
+      position: absolute;
+      width: 2.3rem;
+      height: 2.3rem;
+      top: -0.6rem;
+      right: -0.6rem;
+    }
+
+    .txt {
+      text-align: center;
+      font-size: 1.2rem;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

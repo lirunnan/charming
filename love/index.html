@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="css/love.css">
+    <title></title>
+    <script>
+        function setRemFontSize(baseSize, baseWidth) {
+            var baseSize = baseSize || 13,
+                baseWidth = baseWidth || 375,
+                clientWidth = document.documentElement.clientWidth;
+            document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+        }
+        setRemFontSize();
+        window.addEventListener("resize", function() {
+            setRemFontSize();
+        });
+    </script>
+
+</head>
+
+<body ng-controller="myCtrl">
+    <audio id="voice"></audio>
+    <!--  -->
+    <div class="refresh" ng-click="fresh()">
+        <img src="img/icon_index1_refresh@2x.png" alt="">
+    </div>
+    <!--  -->
+    <div class="container">
+        <div class="title">
+            <ul>
+                <li>
+                    <div class="left_img">
+                        <a href="user.html">
+                            <img ng-src="{{user.headimgurl}}" alt="">
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <a href="javascript:;" ng-click="tog(0)">
+                  小姐姐
+                </a>
+                    <a href="javascript:;" ng-click="tog(1)">
+                  我的
+                    <div class="news">27</div>
+                </a>
+                    <div class="cover cover_border"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="content-inner">
+                <ul ng-repeat="item in list">
+                    <li>
+                        <div class="user_img">
+                            <img ng-src="{{item.headImg}}" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <!-- name -->
+                            <span ng-bind="item.username"></span>
+                            <!-- sex age -->
+                            <span>
+                           <i>♀</i>
+                           <i ng-bind="item.age"></i>
+                        </span>
+                            <!-- job -->
+                            <span ng-bind="item.profession"></span>
+                        </div>
+                        <div>
+                            <span>场景:</span>
+                            <span ng-bind="item.scene"></span>
+                        </div>
+                        <div ng-bind="item.info"></div>
+                    </li>
+                    <li>
+                        <div class="voice" ng-click="play($index)">
+                            <img src="img/icon_index1_laba@2x.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- me -->
+            <div class="content-inner">
+                <ul ng-repeat="item in list">
+                    <li>
+                        <div class="user_img">
+                            <img ng-src="{{item.headImg}}" alt="">
+                        </div>
+                        <div class="news_mm">9</div>
+                    </li>
+                    <li>
+                        <div>
+                            <!-- name -->
+                            <span ng-bind="item.username"></span>
+                            <!-- sex age -->
+                            <span>
+                              <i>♀</i>
+                              <i ng-bind="item.age"></i>
+                            </span>
+                            <!-- job -->
+                            <span ng-bind="item.profession"></span>
+                        </div>
+                        <div>
+                            <span>场景:</span>
+                            <span ng-bind="item.scene"></span>
+                        </div>
+                        <div ng-bind="item.info"></div>
+                    </li>
+                    <li>
+                        <div class="voice" ng-click="play($index)">
+                            <img src="img/icon_index1_laba@2x.png" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+          不满意? 点击刷新换一批
+        </div>
+    </div>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/love.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93476856-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</html>

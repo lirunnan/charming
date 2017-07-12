@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="css/female.css">
+  <title></title>
+  <script>
+    function setRemFontSize(baseSize, baseWidth) {
+      var baseSize = baseSize || 13,
+        baseWidth = baseWidth || 375,
+        clientWidth = document.documentElement.clientWidth;
+      document.getElementsByTagName('html')[0].style.fontSize = clientWidth * baseSize / baseWidth + 'px'
+    }
+    setRemFontSize();
+    window.addEventListener("resize", function() {
+      setRemFontSize();
+    });
+  </script>
+
+</head>
+
+<body ng-controller="myCtrl">
+  <div class="pop">
+    <img alt="">
+  </div>
+  <div class="header">
+    <a href="javascript:;" class="home"><img src="img/home.png" alt=""></a>
+    <div class="user_img">
+      <img ng-src="{{user.avatar}}" alt="">
+    </div>
+    <div class="nickname">
+      <span ng-bind="user.nickname"></span>
+      <a href="javascript:;"></a>
+    </div>
+    <div class="des" ng-bind="user.des"></div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <ul>
+        <li ng-repeat="item in list">
+          <div class="content-inner">
+            <span ng-bind="item.date"></span>
+            <span>
+              <p ng-bind="item.text"></p>
+              <p>
+                <img ng-src="{{item.avatar}}" alt="" ng-click="big($index)">
+              </p>
+            </span>
+          </div>
+        </li>
+      </ul>
+      <div class="counter"></div>
+    </div>
+  </div>
+  <a href="javascript:;" class="notice">撩她</a>
+</body>
+<script src="js/zepto.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/female.js"></script>
+
+</html>
