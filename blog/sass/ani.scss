@@ -194,3 +194,21 @@
     left: 200%;
   }
 }
+@keyframes wave {
+  50% {
+    transform: translate(-50%, -73%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -70%) rotate(360deg);
+  }
+}
+@-webkit-keyframes wave {
+  50% {
+    transform: translate(-50%, -73%) rotate(180deg);
+  }
+
+  100% {
+    transform: translate(-50%, -70%) rotate(360deg);
+  }
+}

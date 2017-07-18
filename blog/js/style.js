@@ -41,7 +41,21 @@ $("#money").click(function() {
 $(".dashang a").click(function() {
   $(".dashang").fadeOut();
 })
+//
+var share_status = false;
 
+function share() {
+  share_status = !share_status;
+  if (share_status) {
+    $(".wave_group").css("bottom", "4%");
+    $(".sns-share").slideDown(1000);
+    $("#money").fadeIn();
+  } else {
+    $(".wave_group").css("bottom", "0");
+    $(".sns-share").fadeOut(1000);
+  }
+}
+//
 function jump(index) {
   $(".example li").eq(index).addClass("exampleLiAni");
   setTimeout(function() {

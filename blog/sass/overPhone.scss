@@ -18,9 +18,11 @@ section {
     }
   }
 }
-.lightDesire{
+
+.lightDesire {
   display: none;
 }
+
 .wrap {
   width: 100%;
 }
@@ -31,8 +33,31 @@ section {
 
 .sns-share {
   bottom: 10px;
+  display: block;
 }
 
 .arrow_group {
   display: none;
+}
+
+.wave_group {
+  width: 2rem;
+  height: 2rem;
+  left: 2rem;
+  top: 2.3rem;
+  border: 1px solid #fff;
+  box-shadow: 0 0 1rem #fff;
+  display: none;
+
+  .wave {
+    width: 2rem;
+    height: 2rem;
+    background-color: #bf7f7c;
+
+    &::after,
+    &::before {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
 }
