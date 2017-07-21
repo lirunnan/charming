@@ -1,0 +1,65 @@
+<div class="wrap">
+  <h1>加载过渡</h1>
+  <div class="container">
+    <div class="group">
+      <h2>pace插件</h2>
+      <p>
+        文件轻量实用,仅12k左右,在事件循环滞后，会在页面记录加载的状态以及进度情况, 可以兼容IE8以上的所有主流插件官方提供了一些加载动画, 也可以自己手写.
+      </p>
+      <h3>调用方法：</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>在head标签中插入:</p>
+          <p>
+            < link rel="stylesheet" href="/pace/themes/pace-theme-barber-shop.css"> // 可根据他给的类做任意修改</p>
+          <p>
+            < script src="/pace/pace.min.js"></ script>
+          </p>
+        </div>
+      </div>
+      <p class="notice">直接把文件引进去就ok了,它会自动检测页面进度,至于样式效果可以观看一下官方给的样式,自己进行修改</p>
+      <h3>还可以通过设置window.paceOptions做一些自定义配置:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>paceOption = {</p>
+          <p>// Disable the 'elements' source</p>
+          <p>elements: false,</p>
+          <p>// Only show the progress on regular and ajax-y page navigation</p>
+          <p>restartOnRequestAfter: false</p>
+          <p>}</p>
+        </div>
+      </div>
+      <p>或者直接写在script标签内</p>
+      <div class="content">
+        <div class="content-inner">
+          <p>
+            < script data-pace-options='{ "ajax": false }' src='pace.js'></ script>
+          </p>
+        </div>
+      </div>
+      <p>如果你使用AMD或者Browserify来加载模块的话，你可以通过这样子来设置（例如：start:</p>
+      <div class="content">
+        <div class="content-inner">
+          <p>define(['pace'], function(pace){</p>
+          <p>pace.start({</p>
+          <p>document:false</p>
+          <p>});</p>
+          <p>});</p>
+        </div>
+      </div>
+      <h3>附加一些API:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <ul>
+            <li>Pace.start：开始显示进度条，如果你不是使用AMD或者Browserify来加载模块的话，这个会默认执行.</li>
+            <li>Pace.restart：进度条重新加载以及显示</li>
+            <li>Pace.stop：隐藏进度条以及停止加载。</li>
+            <li>Pace.track：监测一个或者多个请求任务。</li>
+            <li>Pace.ignore：忽略一个或者多个请求任务。</li>
+          </ul>
+        </div>
+      </div>
+      <h4>直通车: <a href="http://github.hubspot.com/pace/docs/welcome/">Pace</a></h4>
+    </div>
+  </div>
+</div>

@@ -40,6 +40,10 @@ section {
   display: none;
 }
 
+#money {
+  display: block;
+}
+
 .wave_group {
   width: 2rem;
   height: 2rem;
@@ -61,7 +65,8 @@ section {
     }
   }
 }
-.pace .pace-progress:after{
+
+.pace .pace-progress:after {
   font-size: 2rem;
   color: #fff;
 }

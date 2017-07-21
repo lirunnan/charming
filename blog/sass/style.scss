@@ -485,8 +485,8 @@ section {
     border-radius: 45%;
     transform: translate(-50%, -70%) rotate(0);
     -webkit-transform: translate(-50%, -70%) rotate(0);
-    animation: wave 6s linear infinite;
-    -webkit-animation: wave 6s linear infinite;
+    animation: wave 3s linear infinite;
+    -webkit-animation: wave 3s linear infinite;
     z-index: 10;
   }
 
@@ -495,8 +495,8 @@ section {
     background-color: rgba(255, 255, 255, .6);
     transform: translate(-50%, -70%) rotate(0);
     -webkit-transform: translate(-50%, -70%) rotate(0);
-    animation: wave 10s linear -5s infinite;
-    -webkit-animation: wave 10s linear -5s infinite;
+    animation: wave 6s linear -5s infinite;
+    -webkit-animation: wave 6s linear -5s infinite;
     z-index: 20;
   }
 

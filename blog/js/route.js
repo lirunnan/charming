@@ -1,5 +1,5 @@
 var app = angular.module("blog", ["ngRoute"]);
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'tpl/home.html',
@@ -43,9 +43,13 @@ app.config(function($routeProvider) {
     .when('/es6', {
       templateUrl: 'tpl/es6.html',
     })
+    .when('/loading', {
+      templateUrl: 'tpl/loading.html',
+    })
     .otherwise({
       redirectTo: '/'
     });
+  // $locationProvider.html5Mode(true);
 });
 app.run(['$rootScope', '$location', function($rootScope, $location) {
   /* 监听路由的状态变化 */
