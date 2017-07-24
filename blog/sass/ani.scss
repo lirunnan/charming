@@ -149,11 +149,11 @@
   to{left: 1%;top:52%}
 }
 @keyframes group {
-  from{transform: rotateY(90deg) rotateX(60deg) scale(0);}
+  from{transform: rotateY(180deg) rotateX(270deg) scale(0);}
   to{transform: rotateY(0deg) rotateX(0deg) scale(1);}
 }
 @-webkit-keyframes group {
-  from{transform: rotateY(90deg) rotateX(60deg) scale(0);}
+  from{transform: rotateY(180deg) rotateX(270deg) scale(0);}
   to{transform: rotateY(0deg) rotateX(0deg) scale(1);}
 }
 @keyframes wrap {

@@ -18,7 +18,6 @@ function prev() {
     $("section .group").eq(arrowClick).siblings().hide();
   }
 }
-
 function next() {
   if (arrowClick <= $(".group").length - 1) {
     arrowClick++;

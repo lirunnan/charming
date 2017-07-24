@@ -46,6 +46,9 @@ app.config(function($routeProvider, $locationProvider) {
     .when('/loading', {
       templateUrl: 'tpl/loading.html',
     })
+    .when('/handRoute', {
+      templateUrl: 'tpl/handRoute.html',
+    })
     .otherwise({
       redirectTo: '/'
     });

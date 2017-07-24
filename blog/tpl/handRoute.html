@@ -1,0 +1,107 @@
+<div class="wrap">
+  <h1>手写路由</h1>
+  <div class="container">
+    <div class="group">
+      <h3>HTML:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>
+            < a href="#/">white
+              < /a>
+          </p>
+          <p>
+            < a href="#/green">green
+              < /a>
+          </p>
+          <p>
+            < a href="#/blue">blue
+              < /a>
+          </p>
+          <p>
+            < a href="#/yellow">yellow
+              < /a>
+          </p>
+        </div>
+      </div>
+      <h3>JS:</h3>
+      <div class="content">
+        <div class="content-inner">
+          <p>
+            < script>
+          </p>
+          <p>function Route() {}</p>
+          <p>Route.prototype.open = function(route, callback) {</p>
+          <p style="margin-left:2rem;">var arr = {};</p>
+          <p style="margin-left:2rem;">arr[route] = callback;</p>
+          <p>window.addEventListener('hashchange', function() {</p>
+          <p style="margin-left:2rem;">var temp = window.location.hash;</p>
+          <p>for (var i in arr) {</p>
+          <p>if (i == temp.slice(1, temp.length)) {</p>
+          <p style="margin-left:2.5rem;">arr[i]();</p>
+          <p style="margin-left:2rem;">}</p>
+          <p style="margin-left:1.5rem;">}</p>
+          <p style="margin-left:1rem;">})</p>
+          <p>}</p>
+          <p>window.Route = new Route();</p>
+          <p>function change(color) {</p>
+          <p style="margin-left:2rem;">var body = document.getElementsByTagName('body')[0];</p>
+          <p style="margin-left:2rem;">body.style.backgroundColor = color;</p>
+          <p style="margin-left:2rem;">console.log(color);</p>
+          <p>}</p>
+          <p>Route.open('/', function() {</p>
+          <p style="margin-left:2rem;">change('');</p>
+          <p>});</p>
+          <p>Route.open('/green', function() {</p>
+          <p style="margin-left:2rem;">change('green');</p>
+          <p>});</p>
+          <p>Route.open('/blue', function() {</p>
+          <p style="margin-left:2rem;">change('blue');</p>
+          <p>});</p>
+          <p>Route.open('/yellow', function() {</p>
+          <p style="margin-left:2rem;">change('yellow');</p>
+          <p>});</p>
+          <p>
+            < /script>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  function Route() {}
+  Route.prototype.open = function(route, callback) {
+    var arr = {};
+    arr[route] = callback;
+
+    window.addEventListener('hashchange', function() {
+      var temp = window.location.hash;
+      for (var i in arr) {
+        if (i == temp.slice(1, temp.length)) {
+          arr[i]();
+        }
+      }
+    })
+  }
+  window.Route = new Route();
+
+
+  function change(color) {
+    var body = document.getElementsByTagName('body')[0];
+    body.style.backgroundColor = color;
+    console.log(color);
+  }
+
+  Route.open('/white', function() {
+    change('white');
+  });
+  Route.open('/green', function() {
+    change('green');
+  });
+  Route.open('/blue', function() {
+    change('blue');
+  });
+  Route.open('/yellow', function() {
+    change('yellow');
+  });
+</script>

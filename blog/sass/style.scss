@@ -507,6 +507,14 @@ section {
     }
   }
 }
+.route_group{
+  a{
+    @include btn;
+    width: 4em;
+    color: #fff !important;
+    vertical-align: middle;
+  }
+}
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 .pace {
