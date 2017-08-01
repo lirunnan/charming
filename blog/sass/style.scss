@@ -507,8 +507,35 @@ section {
     }
   }
 }
-.route_group{
-  a{
+
+.wave_txt {
+  p {
+    position: fixed;
+    color: #fff;
+    bottom: 5.8rem;
+    left: 0;
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    &:nth-child(1) {
+      left: 2rem;
+      transform: rotate(-30deg);
+    }
+
+    &:nth-child(2) {
+      left: 7rem;
+      transform: rotate(30deg);
+    }
+
+    &:nth-child(3) {
+      bottom: 0.5rem;
+      left: 2.7rem;
+    }
+  }
+}
+
+.route_group {
+  a {
     @include btn;
     width: 4em;
     color: #fff !important;

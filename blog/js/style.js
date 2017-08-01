@@ -49,9 +49,11 @@ function share() {
     $(".wave_group").css("bottom", "4%");
     $(".sns-share").slideDown(1000);
     $("#money").fadeIn();
+    $(".wave_txt").fadeOut();
   } else {
     $(".wave_group").css("bottom", "0");
     $(".sns-share").fadeOut(1000);
+    $(".wave_txt").fadeIn();
   }
 }
 //
@@ -91,7 +93,7 @@ var arrry = [85, 24, 63, 17, 31, 17, 86, 50];
 
 var s = maopao(arrry);
 
-console.log(s)
+console.log(s);
 app.controller("homeCtrl", function() {
 
 });
