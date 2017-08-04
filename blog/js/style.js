@@ -12,12 +12,13 @@ function prev() {
   if (arrowClick >= 0) {
     arrowClick--;
     if (arrowClick == -1) {
-      arrowClick = 2;
+      arrowClick = $("section .group").length - 1;
     }
     $("section .group").eq(arrowClick).show();
     $("section .group").eq(arrowClick).siblings().hide();
   }
 }
+
 function next() {
   if (arrowClick <= $(".group").length - 1) {
     arrowClick++;
